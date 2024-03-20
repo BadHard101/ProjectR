@@ -1,7 +1,6 @@
 package com.example.rschir_buysell.models;
 
 import com.example.rschir_buysell.models.enums.Role;
-import com.example.rschir_buysell.models.products.Product;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +12,7 @@ import java.util.*;
 @Entity
 @Table
 @Data
-public class Client implements UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -51,22 +50,14 @@ public class Client implements UserDetails {
         dateOfCreated = LocalDateTime.now();
     }
 
-    // security
 
+    /* security methods */
     public boolean hasAvatar() {
         return avatar != null;
     }
 
     public boolean isAdmin() {
         return roles.contains(Role.ROLE_ADMIN);
-    }
-
-    public boolean isEmployee() {
-        return roles.contains(Role.ROLE_EMPLOYEE);
-    }
-
-    public boolean isDeliveryman() {
-        return roles.contains(Role.ROLE_DELIVERYMAN);
     }
 
     @Override

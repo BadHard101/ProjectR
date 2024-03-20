@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Доставка по Москве</title>
+    <title>ProjectR</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add Font Awesome for icons -->
@@ -17,8 +17,6 @@
 </head>
 <body>
 <div class="container">
-    <h1>RamenLoven 🍜🍥🥢(๑ᵔ⤙ᵔ๑)</h1>
-    <hr>
     <#if user.email??>
         <h3>Пользователь: <i>${user.name}</i></h3>
         <#if user.isActive()>
@@ -27,16 +25,6 @@
                 <div class="col-md-4">
                     <a href="/account" class="btn btn-primary btn-block"> Аккаунт</a>
                 </div>
-                <#if user.isEmployee() == true>
-                    <div class="col-md-4">
-                        <a href="/employee/panel" class="btn btn-primary btn-block"> Панель работника</a>
-                    </div>
-                </#if>
-                <#if user.isDeliveryman() == true>
-                    <div class="col-md-4">
-                        <a href="/delivery/panel" class="btn btn-primary btn-block"> Панель доставщика</a>
-                    </div>
-                </#if>
                 <#if user.isAdmin() == true>
                     <div class="col-md-4">
                         <a href="/admin/panel" class="btn btn-primary btn-block"> Панель администратора</a>

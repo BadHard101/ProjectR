@@ -36,11 +36,11 @@
             </#if>
         </#list>
         <br>
-        Имя заказчика: ${order.client.name}
+        Имя заказчика: ${order.user.name}
         <br>
-        Телефон: ${order.client.phoneNumber}
+        Телефон: ${order.user.phoneNumber}
         <br>
-        Почта: ${order.client.email}
+        Почта: ${order.user.email}
         <br>
         <br>
         <h3>Список заказа:</h3>

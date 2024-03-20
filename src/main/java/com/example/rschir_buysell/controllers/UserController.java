@@ -1,10 +1,7 @@
 package com.example.rschir_buysell.controllers;
 
-import com.example.rschir_buysell.models.Client;
-import com.example.rschir_buysell.models.products.Product;
-import com.example.rschir_buysell.models.enums.ProductType;
-import com.example.rschir_buysell.services.ClientService;
-import com.example.rschir_buysell.services.products.ShoppingCartService;
+import com.example.rschir_buysell.models.User;
+import com.example.rschir_buysell.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,8 +18,8 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class ClientController {
-    private final ClientService clientService;
+public class UserController {
+    private final UserService userService;
 
     @GetMapping("/login")
     public String login() {
@@ -50,29 +47,18 @@ public class ClientController {
     }
 
     @PostMapping("/registration")
-    public String createUser(Client client, Model model) {
-        if (!clientService.createClient(client)) {
+    public String createUser(User user, Model model) {
+        if (!userService.createUser(user)) {
             model.addAttribute("errorMessage",
-                    "Пользователь с email: " + client.getEmail() + " уже существует");
+                    "Пользователь с email: " + user.getEmail() + " уже существует");
             return "authorization/registration";
         }
         return "redirect:/login";
     }
 
-    @GetMapping("/account")
-    public String account(@AuthenticationPrincipal Client client, Model model) {
-        model.addAttribute("user", client);
-        model.addAttribute("orders", clientService.getHistory(client));
-        return "user/account";
-    }
-
     @GetMapping("")
-    public String categories(Model model, Principal principal) {
-        List<Product> products = clientService.getAllProducts();
-        model.addAttribute("products", products);
-        model.addAttribute("user", clientService.getClientByPrincipal(principal));
-        model.addAttribute("types", ProductType.values());
+    public String categories(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
         return "user/main";
     }
-
 }
