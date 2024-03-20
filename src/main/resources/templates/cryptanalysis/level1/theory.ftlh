@@ -35,7 +35,10 @@
             основных мыслей, решений загадок и оскорбительных материалов от случайного взгляда?
         </label>
         <p>
-            Ответ: <input type="text" id="question1" name="answer1" class="form-control">
+            Ответ:
+            <input type="text" id="question1" name="answer1" class="form-control"
+                   <#if answers??>value="${answers.getAnswer1()}"</#if>>
+
             <#if result??>
                 <#if result[0]>
                     <span style="color: green">Верно</span>
@@ -51,7 +54,10 @@
             чугрщцкфнлш дцосн жг еютзм ъгб."
         </label>
         <p>
-            Ответ: <input type="text" id="question2" name="answer2" class="form-control">
+            Ответ:
+            <input type="text" id="question2" name="answer2" class="form-control"
+                   <#if answers??>value="${answers.getAnswer2()}"</#if>>
+
             <#if result??>
                 <#if result[1]>
                     <span style="color: green">Верно</span>
@@ -68,7 +74,10 @@
             шифр-текста?
         </label>
         <p>
-            Ответ: <input type="text" id="question3" name="answer3" class="form-control">
+            Ответ:
+            <input type="text" id="question3" name="answer3" class="form-control"
+                   <#if answers??>value="${answers.getAnswer3()}"</#if>>
+
             <#if result??>
                 <#if result[2]>
                     <span style="color: green">Верно</span>
@@ -84,7 +93,10 @@
             помощи шифра Цезаря с ключом k=7?
         </label>
         <p>
-            Ответ: <input type="text" id="question4" name="answer4" class="form-control">
+            Ответ:
+            <input type="text" id="question4" name="answer4" class="form-control"
+                   <#if answers??>value="${answers.getAnswer4()}"</#if>>
+
             <#if result??>
                 <#if result[3]>
                     <span style="color: green">Верно</span>
@@ -101,7 +113,10 @@
             пешеходы по лужам"; шифротекст: "Елисд перемен атиуагш спекедимт ме едгмп."
         </label>
         <p>
-            Ответ: <input type="text" id="question5" name="answer5" class="form-control">
+            Ответ:
+            <input type="text" id="question5" name="answer5" class="form-control"
+                   <#if answers??>value="${answers.getAnswer5()}"</#if>>
+
             <#if result??>
                 <#if result[4]>
                     <span style="color: green">Верно</span>

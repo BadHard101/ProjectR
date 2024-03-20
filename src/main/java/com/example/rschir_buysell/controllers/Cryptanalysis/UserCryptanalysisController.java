@@ -32,7 +32,7 @@ public class UserCryptanalysisController {
     }
 
     @PostMapping("/check_Level1_theory")
-    public String check_Level1_theory(Answers answers, Model model, @AuthenticationPrincipal User user) {
+    public String check_Level1_theory(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         boolean[] result = userService.check_Level1_theory(answers);
         model.addAttribute("result", result);
