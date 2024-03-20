@@ -1,9 +1,12 @@
 <form action="/openLevel1_theory" method="get">
-    <button type="submit">Теория</button>
+    <#--if `int` < 1-->
+    <button type="submit" <#if user.email == "j@j2">disabled</#if>>Теория</button>
 </form>
 <form action="/openLevel1_practice" method="get">
-    <button type="submit" <#if user.email == "r@r2">disabled</#if>>Практика</button>
+    <#--if `int` < 2-->
+    <button type="submit" <#if user.email == "j@j2">disabled</#if>>Практика</button>
 </form>
 <form action="/openLevel1_control" method="get">
-    <button type="submit" <#if user.email == "r@r">disabled</#if>>Контроль</button>
+    <#--if `int` < 3-->
+    <button type="submit" <#if user.email == "j@j">disabled</#if>>Контроль</button>
 </form>

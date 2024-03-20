@@ -27,7 +27,7 @@
     шифрования.
 </p>
 
-<form action="/checkAnswersLevel1" method="post">
+<form action="/checkAnswersLevel1_theory" method="post">
     <h3>Тест:</h3>
     <div class="mb-3">
         <label for="question1" class="form-label">
