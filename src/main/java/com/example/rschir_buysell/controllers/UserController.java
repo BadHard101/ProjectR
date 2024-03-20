@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.security.Principal;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -60,5 +58,27 @@ public class UserController {
     public String categories(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         return "user/main";
+    }
+
+    @GetMapping("openCryptanalysisLevels")
+    public String openCryptanalysisLevels(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "cryptanalysis/levels";
+    }
+
+    @GetMapping("openLevel1_theory")
+    public String openLevel1_theory(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "cryptanalysis/level1/theory";
+    }
+    @GetMapping("openLevel1_practice")
+    public String openLevel1_practice(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "cryptanalysis/level1/practice";
+    }
+    @GetMapping("openLevel1_control")
+    public String openLevel1_control(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "cryptanalysis/level1/control";
     }
 }
