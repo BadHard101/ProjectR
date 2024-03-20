@@ -45,11 +45,22 @@ public class User implements UserDetails {
 
     private LocalDateTime dateOfCreated;
 
+    @Column
+    private int cryptoProgress;
+    @Column
+    private int steganoProgress;
+
     @PrePersist
     private void init() {
         dateOfCreated = LocalDateTime.now();
+
+        cryptoProgress = 0;
+        steganoProgress = 0;
     }
 
+    public int countProgress() {
+        return cryptoProgress/15 + steganoProgress/5;
+    }
 
     /* security methods */
     public boolean hasAvatar() {

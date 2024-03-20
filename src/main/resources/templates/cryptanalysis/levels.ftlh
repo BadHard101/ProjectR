@@ -1,10 +1,19 @@
 <#include "../header.ftlh">
 
-
-<a href="/openLevel1_theory">Уровень 1</a>
-<a href="/openLevel2_theory">Уровень 2</a>
-<a href="/openLevel3_theory">Уровень 3</a>
-<a href="/openLevel4_theory">Уровень 4</a>
-<a href="/openLevel5_theory">Уровень 5</a>
+<form action="/openLevel1_theory" method="get">
+    <button type="submit" <#if user.cryptoProgress lt 0>disabled</#if>>Уровень 1</button>
+</form>
+<form action="/openLevel2_theory" method="get">
+    <button type="submit" <#if user.cryptoProgress lt 3>disabled</#if>>Уровень 2</button>
+</form>
+<form action="/openLevel3_theory" method="get">
+    <button type="submit" <#if user.cryptoProgress lt 6>disabled</#if>>Уровень 3</button>
+</form>
+<form action="/openLevel4_theory" method="get">
+    <button type="submit" <#if user.cryptoProgress lt 9>disabled</#if>>Уровень 4</button>
+</form>
+<form action="/openLevel5_theory" method="get">
+    <button type="submit" <#if user.cryptoProgress lt 12>disabled</#if>>Уровень 5</button>
+</form>
 
 <#include "../footer.ftlh">
