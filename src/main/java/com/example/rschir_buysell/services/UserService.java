@@ -34,7 +34,13 @@ public class UserService {
         return userRepository.findByEmail(principal.getName());
     }
 
-    public boolean[] check_Level1_theory(Answers answers) {
+    public void resetProgress(User user) {
+        user.setCryptoProgress(0);
+        user.setSteganoProgress(0);
+        userRepository.save(user);
+    }
+
+    public boolean[] check_Level1_theory(Answers answers, User user) {
         boolean[] result = {false, false, false, false, false};
         if (answers.getAnswer1().equals("ROT13") ||
                 answers.getAnswer1().equals("ROT-13"))
@@ -47,6 +53,12 @@ public class UserService {
             result[3] = true;
         if (answers.getAnswer5().equals("-15"))
             result[4] = true;
+
+        if (result[0] && result[1] && result[2] && result[3] && result[4]) {
+            user.setCryptoProgress(user.getCryptoProgress()+1);
+            userRepository.save(user);
+        }
         return result;
     }
+
 }

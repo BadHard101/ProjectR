@@ -60,4 +60,10 @@ public class UserController {
         model.addAttribute("user", user);
         return "user/main";
     }
+
+    @GetMapping("resetProgress")
+    public String resetProgress(@AuthenticationPrincipal User user) {
+        userService.resetProgress(user);
+        return "redirect:/";
+    }
 }

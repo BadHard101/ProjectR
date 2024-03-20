@@ -11,8 +11,9 @@
             <!-- Button Row for Sell, Cart, Logout -->
             <div class="row button-row">
                 <div class="col-md-4">
-                    <a href="/account" class="btn btn-primary btn-block"> Аккаунт</a>
+                    <a href="/account" class="btn btn-primary btn-block">Аккаунт</a>
                 </div>
+                <button type="button" class="btn btn-danger" onclick="confirmReset()">Сбросить прогресс</button>
                 <#if user.isAdmin() == true>
                     <div class="col-md-4">
                         <a href="/admin/panel" class="btn btn-primary btn-block"> Панель администратора</a>
