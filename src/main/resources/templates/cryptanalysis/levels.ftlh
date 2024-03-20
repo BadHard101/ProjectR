@@ -1,6 +1,6 @@
 <#include "../header.ftlh">
 
-<form action="/openLevel1_theory" method="get">
+<form action="/open_Level1_theory" method="get">
     <button type="submit" <#if user.cryptoProgress lt 0>disabled</#if>>Уровень 1</button>
 </form>
 <form action="/openLevel2_theory" method="get">

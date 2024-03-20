@@ -1,5 +1,6 @@
 package com.example.rschir_buysell.controllers;
 
+import com.example.rschir_buysell.models.Answers;
 import com.example.rschir_buysell.models.User;
 import com.example.rschir_buysell.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -58,27 +59,5 @@ public class UserController {
     public String categories(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         return "user/main";
-    }
-
-    @GetMapping("openCryptanalysisLevels")
-    public String openCryptanalysisLevels(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
-        return "cryptanalysis/levels";
-    }
-
-    @GetMapping("openLevel1_theory")
-    public String openLevel1_theory(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
-        return "cryptanalysis/level1/theory";
-    }
-    @GetMapping("openLevel1_practice")
-    public String openLevel1_practice(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
-        return "cryptanalysis/level1/practice";
-    }
-    @GetMapping("openLevel1_control")
-    public String openLevel1_control(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
-        return "cryptanalysis/level1/control";
     }
 }
