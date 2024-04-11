@@ -60,7 +60,7 @@ public class User implements UserDetails {
 
     public int countProgress() {
         return cryptoProgress/15 + steganoProgress/5;
-    }
+    } // PROGRESS
 
     /* security methods */
     public boolean hasAvatar() {

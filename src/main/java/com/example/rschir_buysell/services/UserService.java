@@ -34,6 +34,9 @@ public class UserService {
         return userRepository.findByEmail(principal.getName());
     }
 
+
+    // PROGRESS
+
     public void resetProgress(User user) {
         user.setCryptoProgress(0);
         user.setSteganoProgress(0);
