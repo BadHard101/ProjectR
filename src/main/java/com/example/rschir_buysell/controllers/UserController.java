@@ -61,6 +61,12 @@ public class UserController {
         return "user/main";
     }
 
+    @GetMapping("openCryptanalysisLevels")
+    public String openCryptanalysisLevels(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "cryptanalysis/levels";
+    }
+
     @GetMapping("resetProgress")
     public String resetProgress(@AuthenticationPrincipal User user) {
         userService.resetProgress(user);

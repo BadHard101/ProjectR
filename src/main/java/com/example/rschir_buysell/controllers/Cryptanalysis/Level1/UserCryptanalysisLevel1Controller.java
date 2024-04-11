@@ -20,12 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserCryptanalysisLevel1Controller {
     private final UserCryptanalysisLevel1Service userCryptanalysisLevel1Service;
 
-    @GetMapping("openCryptanalysisLevels")
-    public String openCryptanalysisLevels(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
-        return "cryptanalysis/levels";
-    }
-
     /**
      * Theory
      */
