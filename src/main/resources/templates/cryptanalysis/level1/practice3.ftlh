@@ -20,14 +20,14 @@
 </style>
 
 <div class="mt-4">
-    <h3>Практика 1</h3>
+    <h3>Практика 3</h3>
     <p><b>Задание:</b> Греческий советник получил послание от одного из разведчиков на клочке бумаги, состоящее из несвязных букв. Помогите Астериксу узнать тайный смысл записки и вовремя защитить свои территории.</p>
     <p><b>Послание:</b> ЫРЬНЪОЪ ГФЭЧЛ ШЛЬЮЛ ЩЛ УЛЦЛЮР ФЮЛЧФК ЫЧЛЩФЬЯРЮ УЛБНЛЮ ЪЭЮЬЪНЛ ЦРЬЦФЬЛ</p>
     <p><b>Используемый шифр:</b> шифр Цезаря</p>
 
     <button id="openMenuButton" class="btn btn-primary">Подсказка</button>
 
-    <form action="/check_Level1_practice1" method="post" class="mt-4">
+    <form action="/check_Level1_practice3" method="post" class="mt-4">
         <div class="form-group">
             <label for="question1">Ответ:</label>
             <input type="text" id="question1" name="answer1" class="form-control" <#if answers??>value="${answers.getAnswer1()}"</#if>>

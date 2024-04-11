@@ -5,7 +5,13 @@
     <form action="/open_Level1_practice1" method="get">
         <button type="submit" class="btn btn-primary mr-2" <#if user.cryptoProgress lt 1>disabled</#if>>Практика 1</button>
     </form>
+    <form action="/open_Level1_practice2" method="get">
+        <button type="submit" class="btn btn-primary mr-2" <#if user.cryptoProgress lt 2>disabled</#if>>Практика 2</button>
+    </form>
+    <form action="/open_Level1_practice3" method="get">
+        <button type="submit" class="btn btn-primary mr-2" <#if user.cryptoProgress lt 3>disabled</#if>>Практика 3</button>
+    </form>
     <form action="/open_Level1_control" method="get">
-        <button type="submit" class="btn btn-primary" <#if user.cryptoProgress lt 2>disabled</#if>>Контроль</button>
+        <button type="submit" class="btn btn-primary" <#if user.cryptoProgress lt 4>disabled</#if>>Контроль</button>
     </form>
 </div>
