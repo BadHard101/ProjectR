@@ -102,7 +102,7 @@
     </div>
 
     <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <button type="submit" class="btn btn-primary" style="margin: 1.5rem 0 10rem 0">Проверить</button>
+    <button type="submit" class="btn btn-primary" style="margin: 1rem 0 5rem 0">Проверить</button>
 </form>
 <#if errorMessage??>
     <h2 style="color: red">${errorMessage}</h2>

@@ -57,7 +57,7 @@ public class UserService {
         if (answers.getAnswer5().equals("-15"))
             result[4] = true;
 
-        if (result[0] && result[1] && result[2] && result[3] && result[4]) {
+        if (result[0] && result[1] && result[2] && result[3] && result[4] && user.getCryptoProgress() <= 0) {
             user.setCryptoProgress(user.getCryptoProgress()+1);
             userRepository.save(user);
         }
@@ -69,7 +69,11 @@ public class UserService {
         boolean[] result = {false};
         if (answers.getAnswer1().equals("ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА")) {
             result[0] = true;
-            user.setCryptoProgress(user.getCryptoProgress()+1);
+
+            if (user.getCryptoProgress() <= 1) {
+                user.setCryptoProgress(user.getCryptoProgress()+1);
+                userRepository.save(user);
+            }
             userRepository.save(user);
         }
         return result;
