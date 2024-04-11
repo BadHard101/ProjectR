@@ -6,6 +6,6 @@
         <button type="submit" class="btn btn-primary mr-2" <#if user.cryptoProgress lt 1>disabled</#if>>Практика</button>
     </form>
     <form action="/open_Level1_control" method="get">
-        <button type="submit" class="btn btn-primary mr-2" <#if user.cryptoProgress lt 2>disabled</#if>>Контроль</button>
+        <button type="submit" class="btn btn-primary" <#if user.cryptoProgress lt 2>disabled</#if>>Контроль</button>
     </form>
 </div>

@@ -101,7 +101,6 @@
         </#if>
     </div>
 
-    <!-- Вставьте остальные вопросы здесь с аналогичной структурой -->
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <button type="submit" class="btn btn-primary" style="margin: 1.5rem 0 10rem 0">Проверить</button>
 </form>

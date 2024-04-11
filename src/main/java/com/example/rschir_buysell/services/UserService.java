@@ -64,4 +64,15 @@ public class UserService {
         return result;
     }
 
+
+    public boolean[] check_Level1_practice(Answers answers, User user) {
+        boolean[] result = {false};
+        if (answers.getAnswer1().equals("ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА")) {
+            result[0] = true;
+            user.setCryptoProgress(user.getCryptoProgress()+1);
+            userRepository.save(user);
+        }
+        return result;
+    }
+
 }

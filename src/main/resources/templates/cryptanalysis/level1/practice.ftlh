@@ -1,36 +1,55 @@
-<#--
 <#include "../../header.ftlh">
 
 <#include "panel.ftlh">
 
-<h3>Практика</h3>
+<style>
+    /* Стили для всплывающего окна */
+    .popup {
+        display: none; /* Скрываем всплывающее окно по умолчанию */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 1000; /* Устанавливаем высокий z-index, чтобы всплывающее окно находилось над остальным контентом */
+    }
+</style>
 
-<#include "../../footer.ftlh">-->
+<p><b>Задание:</b> Греческий советник получил послание от одного из разведчиков на клочке бумаги, состоящее из несвязных
+    букв.
+    Помогите Астериксу узнать тайный смысл записки и вовремя защитить свои территории.</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Example</title>
-    <style>
-        /* Стили для всплывающего окна */
-        .popup {
-            display: none; /* Скрываем всплывающее окно по умолчанию */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            z-index: 1000; /* Устанавливаем высокий z-index, чтобы всплывающее окно находилось над остальным контентом */
-        }
-    </style>
-</head>
-<body>
+<p>ЫРЬНЪОЪ ГФЭЧЛ ШЛЬЮЛ ЩЛ УЛЦЛЮР ФЮЛЧФК ЫЧЛЩФЬЯРЮ УЛБНЛЮ ЪЭЮЬЪНЛ ЦРЬЦФЬЛ</p>
 
-<button id="openMenuButton">Подсказка</button>
+    <p><b>Используемый шифр:</b> шифр Цезаря</p>
+
+<button id="openMenuButton" class="btn btn-primary">Подсказка</button>
+
+<form action="/check_Level1_practice" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="question1">Ответ:</label>
+        <input type="text" id="question1" name="answer1" class="form-control"
+               <#if answers??>value="${answers.getAnswer1()}"</#if>>
+        <#if result??>
+            <#if result[0]>
+                <span style="color: green">Верно</span>
+            <#else>
+                <span style="color: red">Неверно</span>
+            </#if>
+        </#if>
+    </div>
+
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <button type="submit" class="btn btn-primary" style="margin: 1.5rem 0 10rem 0">Проверить</button>
+</form>
+<#if errorMessage??>
+    <h2 style="color: red">${errorMessage}</h2>
+</#if>
+
+
+
 
 <#--Окно меню подсказки-->
 <div id="menu" class="popup">
@@ -149,5 +168,5 @@
 
 
 </script>
-</body>
-</html>
+
+<#include "../../footer.ftlh">
