@@ -65,7 +65,7 @@ public class UserService {
     }
 
 
-    public boolean[] check_Level1_practice(Answers answers, User user) {
+    public boolean[] check_Level1_practice1(Answers answers, User user) {
         boolean[] result = {false};
         if (answers.getAnswer1().equals("ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА")) {
             result[0] = true;

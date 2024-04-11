@@ -39,18 +39,18 @@ public class UserCryptanalysisController {
         return "cryptanalysis/level1/theory";
     }
 
-    @GetMapping("/open_Level1_practice")
-    public String open_Level1_practice(Model model, @AuthenticationPrincipal User user) {
+    @GetMapping("/open_Level1_practice1")
+    public String open_Level1_practice1(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        return "cryptanalysis/level1/practice";
+        return "cryptanalysis/level1/practice1";
     }
 
-    @PostMapping("/check_Level1_practice")
-    public String check_Level1_practice(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
+    @PostMapping("/check_Level1_practice1")
+    public String check_Level1_practice1(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        boolean[] result = userService.check_Level1_practice(answers, user);
+        boolean[] result = userService.check_Level1_practice1(answers, user);
         model.addAttribute("result", result);
-        return "cryptanalysis/level1/practice";
+        return "cryptanalysis/level1/practice1";
     }
 
     @GetMapping("open_Level1_control")

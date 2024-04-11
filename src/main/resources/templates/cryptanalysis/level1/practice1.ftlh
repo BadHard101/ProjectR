@@ -26,7 +26,7 @@
 
     <button id="openMenuButton" class="btn btn-primary">Подсказка</button>
 
-    <form action="/check_Level1_practice" method="post" class="mt-4">
+    <form action="/check_Level1_practice1" method="post" class="mt-4">
         <div class="form-group">
             <label for="question1">Ответ:</label>
             <input type="text" id="question1" name="answer1" class="form-control" <#if answers??>value="${answers.getAnswer1()}"</#if>>
