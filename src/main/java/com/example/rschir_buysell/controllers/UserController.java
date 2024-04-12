@@ -61,6 +61,12 @@ public class UserController {
         return "user/main";
     }
 
+    @GetMapping("account")
+    public String account(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "user/account";
+    }
+
     @GetMapping("openCryptanalysisLevels")
     public String openCryptanalysisLevels(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
