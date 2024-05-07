@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectR</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://private-user-images.githubusercontent.com/46607313/325907421-ae316c13-2eca-43e6-86a2-2191fe921d25.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUwODY5OTcsIm5iZiI6MTcxNTA4NjY5NywicGF0aCI6Ii80NjYwNzMxMy8zMjU5MDc0MjEtYWUzMTZjMTMtMmVjYS00M2U2LTg2YTItMjE5MWZlOTIxZDI1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA3VDEyNTgxN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFjODBjM2Q2ZWI5ZDdkYzE5YzVkMDJjYTM3YTcxOWRhODk1Mjk0NjNiNzEzY2VhNGU4ZjNkZTQyNjU5YTI4NGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.aBLbP5DWIGjIr_QAOoW1-RNR4Pe8bn9lGAM87wSZA6o" type="image/png">
     <style>
+        .fullbgLevels {
+                            background: url("https://private-user-images.githubusercontent.com/46607313/328582720-111553df-fde0-408d-8d05-0d1dade56db8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUwOTU5MTIsIm5iZiI6MTcxNTA5NTYxMiwicGF0aCI6Ii80NjYwNzMxMy8zMjg1ODI3MjAtMTExNTUzZGYtZmRlMC00MDhkLThkMDUtMGQxZGFkZTU2ZGI4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA3VDE1MjY1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWE3MTQxZDdhNzFlMzY0NDBiMDc1YzhiMDUwNTE3NDkxZjFlYzA5MzBhNDZhN2M2OTE3MzhjY2UwNjUxYTRlYzUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.TiM9wL7zcoN746h4fZq0kLsuLkA3QnsMuTgjp4-6gWc")
+                                no-repeat center center fixed;
+                            background-size: cover;
+                            text-align: center;
+                            height: 100vh;
+                            min-height: 100vh;
+                                         }
+
         body {
             font-size: 20px;
         }
+
     </style>
 </head>
 <body>

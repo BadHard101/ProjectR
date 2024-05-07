@@ -1,5 +1,7 @@
 <#include "../header.ftlh">
 
+<div class="fullbgLevels">
+
 <div class="text-center">
     <h1>КРИПТОАНАЛИЗ</h1>
 </div>
@@ -13,10 +15,6 @@
 <p>В этом разделе вы познакомитесь с основами криптоанализа и научитесь взламывать различные шифры. После прохождения
     всех
     уровней вы сможете сами создавать надежные шифры и защищать свои данные от посторонних глаз.</p>
-
-ч<div style="background-image: url('
-    https://private-user-images.githubusercontent.com/46607313/327386213-3ac263d0-e7f7-46f4-8a75-cfae51357fd0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ2NDM1NzEsIm5iZiI6MTcxNDY0MzI3MSwicGF0aCI6Ii80NjYwNzMxMy8zMjczODYyMTMtM2FjMjYzZDAtZTdmNy00NmY0LThhNzUtY2ZhZTUxMzU3ZmQwLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTAyVDA5NDc1MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI3Mzc3NTYzZjg1OTBjNjFkYWU5MDJjZWRiYWUzY2E2YjM0YmZmYTMzZDNkYzU4NzAxMTA5NDEyZjNiZDcyMWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.3-WNu1eKp24t9eCrYlmrQcRw1sSmI4iE6bTgUuO0n3o
-    '); background-size: cover;">
 
 
 <div class="text-center">
@@ -197,6 +195,6 @@
 
 </div>
 
-</div>
+
 
 <#include "../footer.ftlh">
