@@ -40,6 +40,7 @@
     стеганографии. Начнем это увлекательное приключение прямо сейчас!</p>
 
 <div style="display: flex; flex-direction: row; justify-content: space-around">
+
     <form action="/openCryptanalysisLevels" method="get">
         <button
                 type="submit"
@@ -55,12 +56,12 @@
         </button>
     </form>
 </div>
-<div class="center">
-    <#--    fox with text-->
-    <img src="https://private-user-images.githubusercontent.com/46607313/325914973-7dc32f77-7faa-4557-a464-a3cf53a8aca9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUxNDM4ODQsIm5iZiI6MTcxNTE0MzU4NCwicGF0aCI6Ii80NjYwNzMxMy8zMjU5MTQ5NzMtN2RjMzJmNzctN2ZhYS00NTU3LWE0NjQtYTNjZjUzYThhY2E5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA4VDA0NDYyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUyMjg3ZjgxNzI2MTY4YjU2MWJkNjQ3YWY4NGEyYTYzOWZhZjYxNWVkZGNjYzA4ZWI0MGUwZGRiMjRkODQ2YWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.IS80LOEUGpthe_m055RH40SyfcPQxuLogh_FhaaqgAA"
+<div class="center" style="display: flex; justify-content: center">
+    <#--fox with text-->
+    <img src="https://i.ibb.co/9gpKTY3/Fox-With-Text.png"
          style="
          width: 70vw;
-         max-width: 1000px;
+         max-width: 700px;
 ">
 </div>
 <#include "../footer.ftlh">
