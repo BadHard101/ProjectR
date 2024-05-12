@@ -75,8 +75,8 @@
             min-width: 400px;
             margin: 10% 0;
             background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;">
 
                 <h4>Регистрация</h4>

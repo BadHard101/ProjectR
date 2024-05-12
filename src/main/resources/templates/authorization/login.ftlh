@@ -69,7 +69,7 @@
         <div class="container">
             <h1 class="mt-4" style="float:center;">ProjectR</h1>
 
-            <div style="width: 400px; margin: 30% auto auto; background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+            <div style="width: 400px; margin: 30% auto auto; background: #f9f9f9; padding: 30px; border-radius: 20px; text-align: center;">
 
                 <h4 class="mt-4">Авторизация</h4> <br>
 
