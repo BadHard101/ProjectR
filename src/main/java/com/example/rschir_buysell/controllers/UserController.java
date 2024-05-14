@@ -9,11 +9,13 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -46,7 +48,15 @@ public class UserController {
     }
 
     @PostMapping("/registration")
-    public String createUser(User user, Model model) {
+    public String createUser(@Valid User user, BindingResult bindingResult, Model model) {
+
+        model.addAttribute("user", user);
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("validationErrors", bindingResult);
+            return "authorization/registration";
+        }
+
         if (!userService.createUser(user)) {
             model.addAttribute("errorMessage",
                     "Пользователь с email: " + user.getEmail() + " уже существует");

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectR</title>
+    <title>КриптоЛис</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon"
             <#--head-->
@@ -12,7 +12,7 @@
     <style>
         .fullbgLevels {
             /*background 2 - AuthBG*/
-            /*background: url("https://i.ibb.co/gwfMvKs/AuthBG.png") no-repeat center center fixed;*/
+            /*background: url("https://i.ibb.co/yByM2DK/bg4.png") no-repeat center center fixed;*/
             background-size: cover;
             text-align: center;
             height: 100vh;
@@ -25,7 +25,9 @@
 
     </style>
 </head>
-<body>
+<body
+<#--        class="fullbgLevels"-->
+>
 <div class="container mt-5">
     <div style="display: flex; flex-direction: row">
         <a href="/">
@@ -53,7 +55,7 @@
                                 <a href="/admin/panel" class="btn btn-primary btn-block"> Панель администратора</a>
                             </div>
                         </#if>
-                        <div class="col-md-4 mt-3 mt-md-0">
+                        <div class="col-md-4">
                             <form action="/logout" method="post" class="d-inline">
                                 <input type="hidden" name="_csrf" value="${_csrf.token}">
                                 <input type="submit" style="background-color:#00008B; border: #9966cc;" value="Выйти"

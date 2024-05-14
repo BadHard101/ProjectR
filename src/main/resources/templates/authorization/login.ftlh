@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ProjectR</title>
+    <title>КриптоЛис</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="shortcut icon"
             <#--head-->
@@ -67,15 +67,11 @@
          class="row">
 
         <div class="container">
-            <h1 class="mt-4" style="float:center;">ProjectR</h1>
+            <h1 class="mt-4" style="color: white;float:center;">КриптоЛис</h1>
 
             <div style="width: 400px; margin: 30% auto auto; background: #f9f9f9; padding: 30px; border-radius: 20px; text-align: center;">
 
                 <h4 class="mt-4">Авторизация</h4> <br>
-
-                <#if errorMessage??>
-                    <h2 style="color: red; font-size: 18px;">${errorMessage}</h2>
-                </#if>
 
                 <form action="/login" method="post">
                     <div class="form-group" style="text-align: left;">
@@ -87,6 +83,9 @@
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <#if errorMessage??>
+                        <p style="color: red; font-size: 18px;">${errorMessage}</p>
+                    </#if>
                     <button type="submit" margin="6em" class="btn btn-primary"
                             style="background-color: #9966cc; border: #9966cc;">Вход
                     </button>

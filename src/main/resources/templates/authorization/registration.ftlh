@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ProjectR</title>
+    <title>КриптоЛис</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="shortcut icon"
             <#--head-->
@@ -69,7 +69,7 @@
             class="row">
 
         <div class="container">
-            <h1 class="mt-4" style="float:center;">ProjectR</h1>
+            <h1 class="mt-4" style="color: white;float:center;">КриптоЛис</h1>
 
             <div style="
             min-width: 400px;
@@ -81,26 +81,49 @@
 
                 <h4>Регистрация</h4>
 
-                <#if errorMessage??>
-                    <h2 style="color: red; font-size: 18px;">${errorMessage}</h2>
-                </#if>
-
                 <form action="/registration" method="post">
                     <div class="mb-3" style="text-align: left;">
                         <label for="username" class="form-label">Имя:</label>
-                        <input type="text" id="username" name="name" class="form-control">
+                        <input type="text" id="username" name="name" class="form-control"
+                                <#if user?? && user.name??>
+                                    value="${user.name}"
+                                </#if>
+                        >
+                        <#if validationErrors?? && validationErrors.getFieldError("name")??>
+                            <p style="color: red">${validationErrors.getFieldError("name").defaultMessage}</p>
+                        </#if>
                     </div>
                     <div class="mb-3" style="text-align: left;">
                         <label for="email" class="form-label">Эл. почта:</label>
-                        <input type="email" id="email" name="email" class="form-control">
+                        <input type="email" id="email" name="email" class="form-control"
+                                <#if user?? && user.name??>
+                                    value="${user.email}"
+                                </#if>
+                        >
+                        <#if validationErrors?? && validationErrors.getFieldError("email")??>
+                            <p style="color: red">${validationErrors.getFieldError("email").defaultMessage}</p>
+                        </#if>
+                        <#if errorMessage??>
+                            <p style="color: red; font-size: 18px;">${errorMessage}</p>
+                        </#if>
                     </div>
                     <div class="mb-3" style="text-align: left;">
                         <label for="phoneNumber" class="form-label">Номер телефона:</label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control">
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control"
+                                <#if user?? && user.name??>
+                                    value="${user.phoneNumber}"
+                                </#if>
+                        >
+                        <#if validationErrors?? && validationErrors.getFieldError("phoneNumber")??>
+                            <p style="color: red">${validationErrors.getFieldError("phoneNumber").defaultMessage}</p>
+                        </#if>
                     </div>
                     <div class="mb-3" style="text-align: left;">
                         <label for="password" class="form-label">Пароль:</label>
                         <input type="password" id="password" name="password" class="form-control">
+                        <#if validationErrors?? && validationErrors.getFieldError("password")??>
+                            <p style="color: red">${validationErrors.getFieldError("password").defaultMessage}</p>
+                        </#if>
                     </div>
                     <input type="hidden" name="_csrf" value="${_csrf.token}">
                     <button type="submit" style="background-color: #9966cc; border: #9966cc;" class="btn btn-primary">
