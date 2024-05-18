@@ -20,17 +20,22 @@
 </style>
 
 <div class="mt-4">
-    <h3>Практика 2</h3>
-    <p><b>Задание:</b> Греческий советник получил послание от одного из разведчиков на клочке бумаги, состоящее из несвязных букв. Помогите Астериксу узнать тайный смысл записки и вовремя защитить свои территории.</p>
-    <p><b>Послание:</b> ЫРЬНЪОЪ ГФЭЧЛ ШЛЬЮЛ ЩЛ УЛЦЛЮР ФЮЛЧФК ЫЧЛЩФЬЯРЮ УЛБНЛЮ ЪЭЮЬЪНЛ ЦРЬЦФЬЛ</p>
-    <p><b>Используемый шифр:</b> шифр Цезаря</p>
+    <h3>Практика. Этап II: Создание и заполнение массива индексов шифротекста</h3>
+    <p>
+        Теперь для удобства самого дальнейшего процесса расшифрования создадим еще один массив – в него будут записаны
+        номера букв шифротекста в алфавите.
+    </p>
+    <p>
+        <b>Задание:</b> Запишите через запятую, без пробелов индексы 4 последних букв шифротекста.
+    </p>
 
-    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>
+<#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
     <form action="/check_Level1_practice2" method="post" class="mt-4">
         <div class="form-group">
             <label for="question1">Ответ:</label>
-            <input type="text" id="question1" name="answer1" class="form-control" <#if answers??>value="${answers.getAnswer1()}"</#if>>
+            <input type="text" id="question1" name="answer1" class="form-control"
+                   <#if answers??>value="${answers.getAnswer1()}"</#if>>
             <#if result??>
                 <#if result[0]>
                     <span style="color: green">Верно</span>

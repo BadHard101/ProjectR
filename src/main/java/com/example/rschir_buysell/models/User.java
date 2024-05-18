@@ -28,12 +28,6 @@ public class User implements UserDetails {
     private String email;
 
     @Column
-    @NotEmpty(message = "Телефон не должен быть пустым")
-    @Pattern(regexp = "(^$|[0-9]{11})",
-            message = "Некорректный номер телефона")
-    private String phoneNumber;
-
-    @Column
     @NotEmpty(message = "Имя не должно быть пустым")
     @Size(min = 2, max = 30, message = "Имя должно быть от 2 до 30 символов")
     private String name;

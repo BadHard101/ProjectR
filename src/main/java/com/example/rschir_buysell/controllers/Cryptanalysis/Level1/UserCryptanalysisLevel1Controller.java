@@ -32,8 +32,8 @@ public class UserCryptanalysisLevel1Controller {
     @PostMapping("/check_Level1_theory")
     public String check_Level1_theory(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        boolean[] result = userCryptanalysisLevel1Service.check_Level1_theory(answers, user);
-        model.addAttribute("result", result);
+        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        userCryptanalysisLevel1Service.check_Level1_theory(answers, user);
         return "cryptanalysis/level1/theory";
     }
 
