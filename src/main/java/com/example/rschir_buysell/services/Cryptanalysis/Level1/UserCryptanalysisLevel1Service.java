@@ -23,7 +23,6 @@ public class UserCryptanalysisLevel1Service {
         }
     }
 
-
     /**
      * Practice 1
      */
@@ -82,7 +81,7 @@ public class UserCryptanalysisLevel1Service {
         boolean[] result = {false, false, false};
         if (answers.getAnswer1().equals("23"))
             result[0] = true;
-        if (answers.getAnswer2().equals("mwiixviiwsjkviirvihvswiwxss"))
+            if (answers.getAnswer2().equals("mwiixviiwsjkviirvihvswiwxss"))
             result[1] = true;
         if (answers.getAnswer3().equals("0,12"))
             result[2] = true;
