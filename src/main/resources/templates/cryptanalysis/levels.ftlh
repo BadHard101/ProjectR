@@ -44,13 +44,13 @@
                                         height: 150px;
                                         width: 150px;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                         background-size: contain;
                                         border: none;
                                         cursor: pointer;
                                 <#if user.cryptoProgress gt 4>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png.png') no-repeat;
                                 </#if> ">
                         </button>
                     </form>
@@ -68,14 +68,14 @@
                                         border: none;
                                         cursor: pointer;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                 <#if user.cryptoProgress lt 5>
                                 <#--disabled-->
-                                        background: url('https://i.ibb.co/jrjj9kn/Disabled-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
                                 <#if user.cryptoProgress gt 9>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
 
                         </button>
@@ -94,14 +94,14 @@
                                         border: none;
                                         cursor: pointer;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                 <#if user.cryptoProgress lt 10>
                                 <#--disabled-->
-                                        background: url('https://i.ibb.co/jrjj9kn/Disabled-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
                                 <#if user.cryptoProgress gt 14>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
 
                         </button>
@@ -119,14 +119,14 @@
                                         border: none;
                                         cursor: pointer;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                 <#if user.cryptoProgress lt 15>
                                 <#--disabled-->
-                                        background: url('https://i.ibb.co/jrjj9kn/Disabled-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
                                 <#if user.cryptoProgress gt 19>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
 
                         </button>
@@ -145,14 +145,14 @@
                                         border: none;
                                         cursor: pointer;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                 <#if user.cryptoProgress lt 20>
                                 <#--disabled-->
-                                        background: url('https://i.ibb.co/jrjj9kn/Disabled-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
                                 <#if user.cryptoProgress gt 24>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if>">
 
                         </button>
@@ -171,14 +171,14 @@
                                         border: none;
                                         cursor: pointer;
                                         /*ready*/
-                                        background: url('https://i.ibb.co/6mX6Pbc/ReadyPaw.png') no-repeat;
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
                                 <#if user.cryptoProgress lt 25>
                                 <#--disabled-->
-                                        background: url('https://i.ibb.co/jrjj9kn/Disabled-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
                                 <#if user.cryptoProgress gt 27>
                                 <#--complete-->
-                                        background: url('https://i.ibb.co/232Py5S/Complete-Paw.png') no-repeat;
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if>">
                         </button>
                     </form>
