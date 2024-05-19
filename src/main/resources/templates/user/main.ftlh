@@ -48,7 +48,7 @@
             Криптоанализ
         </button>
     </form>
-    <form action="/openSteganographyLevels" method="get">
+    <form action="/openSteganoLevels" method="get">
         <button
                 type="submit"
                 class="mainButton btn btn-primary">
