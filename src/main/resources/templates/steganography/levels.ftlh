@@ -71,7 +71,7 @@
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.steganoProgress gt 2>
+                                <#if user.steganoProgress gt 1>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
@@ -83,8 +83,33 @@
                     <form action="/openStegano_Level3" method="get">
                         <button type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
-                                <#if user.steganoProgress lt 3>disabled</#if>
+                                <#if user.steganoProgress lt 2>disabled</#if>
 
+                                style="
+                                        height: 150px;
+                                        width: 150px;
+                                        background-size: contain;
+                                        border: none;
+                                        cursor: pointer;
+                                        /*ready*/
+                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
+                                <#if user.steganoProgress lt 2>
+                                <#--disabled-->
+                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
+                                </#if>
+                                <#if user.steganoProgress gt 2>
+                                <#--complete-->
+                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
+                                </#if> ">
+
+                        </button>
+                    </form>
+                </div>
+                <div style="margin: 1rem; grid-row: 4; grid-column: 2;">
+                    <form action="/openStegano_Level4" method="get">
+                        <button type="submit"
+                                class="btn btn-primary btn-lg btn-circle"
+                                <#if user.steganoProgress lt 3>disabled</#if>
                                 style="
                                         height: 150px;
                                         width: 150px;
@@ -97,7 +122,7 @@
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.steganoProgress gt 4>
+                                <#if user.steganoProgress gt 3>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
@@ -105,9 +130,10 @@
                         </button>
                     </form>
                 </div>
-                <div style="margin: 1rem; grid-row: 4; grid-column: 2;">
-                    <form action="/openStegano_Level4" method="get">
-                        <button type="submit"
+                <div style="margin: 1rem; grid-row: 5; grid-column: 1;">
+                    <form action="/openStegano_Level5" method="get">
+                        <button
+                                type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
                                 <#if user.steganoProgress lt 4>disabled</#if>
                                 style="
@@ -122,33 +148,7 @@
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.steganoProgress gt 5>
-                                <#--complete-->
-                                        background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
-                                </#if> ">
-
-                        </button>
-                    </form>
-                </div>
-                <div style="margin: 1rem; grid-row: 5; grid-column: 1;">
-                    <form action="/openStegano_Level5" method="get">
-                        <button
-                                type="submit"
-                                class="btn btn-primary btn-lg btn-circle"
-                                <#if user.steganoProgress lt 5>disabled</#if>
-                                style="
-                                        height: 150px;
-                                        width: 150px;
-                                        background-size: contain;
-                                        border: none;
-                                        cursor: pointer;
-                                        /*ready*/
-                                        background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
-                                <#if user.steganoProgress lt 5>
-                                <#--disabled-->
-                                        background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
-                                </#if>
-                                <#if user.steganoProgress gt 6>
+                                <#if user.steganoProgress gt 4>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if>">
