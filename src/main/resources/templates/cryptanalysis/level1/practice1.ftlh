@@ -74,7 +74,8 @@
         <p><b>Послание:</b> ЫРЬНЪОЪ ГФЭЧЛ ШЛЬЮЛ ЩЛ УЛЦЛЮР ФЮЛЧФК ЫЧЛЩФЬЯРЮ УЛБНЛЮ ЪЭЮЬЪНЛ ЦРЬЦФЬЛ</p>
         <p><b>Используемый шифр:</b> шифр Цезаря</p>-->
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка</button>
 
         <form action="/check_Level1_practice1" method="post" class="mt-4">
             <div class="form-group">
@@ -106,30 +107,23 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <form action="/open_Level1_theory" method="get" class="mr-2">
-                <button type="submit" class="btn btn-primary">О шифре</button>
-            </form>
-            <button id="openMethodButton" class="btn btn-primary mr-2">Метод</button>
-            <button id="openKeyButton" class="btn btn-primary mr-2">Ключ</button>
-            <button id="openResultButton" class="btn btn-warning mr-2" style="display: none">Ответ</button>
+            <button id="openEmptyMassiveButton" class="btn btn-primary mr-2">Пустые массивы</button>
+<#--            <button id="openAlphabetButton" class="btn btn-primary mr-2">Алфавит</button>-->
+<#--            <button id="openLengthButton" class="btn btn-primary mr-2">Длина строки</button>-->
+<#--            <button id="openCodeButton" class="btn btn-warning mr-2" style="display: none">Код фрагмента</button>-->
 
             <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
         </div>
     </div>
 
     <!-- Окно Метода подсказки -->
-    <div id="method" class="popup">
-        <h2>Метод</h2>
+    <div id="emptyMassive" class="popup">
+        <h2>Пустые массивы</h2>
         <p>
-            Малое пространство ключей делает брут-форс самым эффективным и простым вариантом атаки на шифр Цезаря.
-            Брутфорс, или атака полным перебором, — это метод атаки с угадыванием паролей, учетных данных для входа в
-            систему, ключей шифрования и прочей информации. Это метод проб и ошибок, цель которого — перебрать все возможные
-            комбинации для получения правильного пароля.
-            Для вскрытия необходимо каждую букву шифртекста заменить буквой, стоящей на один знак левее в алфавите. Если в
-            результате этого не удалось получить читаемое сообщение, то необходимо повторить действие, но уже сместив буквы
-            на два знака левее. И так далее, пока в результате не получится читаемый текст.
+            Для создания пустых массивов фиксированной длины используйте конструкцию
+            вида &lt;имя пустого массива&gt; = [None] * &lt;длина пустого массива&gt;.
         </p>
-        <button id="closeMethodButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeEmptyMassiveButton" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно Ключа подсказки -->
@@ -148,7 +142,7 @@
 
     <script>
         let resultCounter = 0;
-        const needForResult = 2;
+        const needForResult = 3;
 
         const openMenuButton = document.getElementById('openMenuButton');
         const menu = document.getElementById('menu');
@@ -157,7 +151,7 @@
         openMenuButton.addEventListener('click', function () {
             result.style.display = 'none';
             key.style.display = 'none';
-            method.style.display = 'none';
+            emptyMassive.style.display = 'none';
             menu.style.display = 'block';
         });
 
@@ -165,13 +159,13 @@
             menu.style.display = 'none';
         });
 
-        const openMethodButton = document.getElementById('openMethodButton');
-        const method = document.getElementById('method');
-        const closeMethodButton = document.getElementById('closeMethodButton');
+        const openEmptyMassiveButton = document.getElementById('openEmptyMassiveButton');
+        const emptyMassive = document.getElementById('emptyMassive');
+        const closeEmptyMassiveButton = document.getElementById('closeEmptyMassiveButton');
 
-        openMethodButton.addEventListener('click', function () {
+        openEmptyMassiveButton.addEventListener('click', function () {
             menu.style.display = 'none';
-            method.style.display = 'block';
+            emptyMassive.style.display = 'block';
 
             resultCounter = resultCounter + 1;
             if (resultCounter === needForResult) {
@@ -179,8 +173,8 @@
             }
         });
 
-        closeMethodButton.addEventListener('click', function () {
-            method.style.display = 'none';
+        closeEmptyMassiveButton.addEventListener('click', function () {
+            emptyMassive.style.display = 'none';
         });
 
         const openKeyButton = document.getElementById('openKeyButton');
