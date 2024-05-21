@@ -14,6 +14,8 @@
             /*background 2 - AuthBG*/
             background: url("https://i.ibb.co/WVfTQ7b/bg4.png") no-repeat center top;
             /*color: #2a2828;*/
+            background-size: cover;
+            height: 100vh;
         }
 
         body {
@@ -28,7 +30,7 @@
         <a href="/" style="display: flex; align-items: center; justify-content: center">
             <#-- full fox with bg-->
             <img src="https://i.ibb.co/V2zbqXD/Fox-Without-BG.png"
-                 style="max-hight: 100px; max-width: 100px; margin: 0 1rem">
+                 style="max-hight: 110px; max-width: 110px; margin: 0 1rem">
         </a>
         <#if user.email??>
             <div style="display: flex; flex-direction: column; width: 100%">
@@ -37,11 +39,11 @@
                     <div class="row button-row">
                         <div class="col-md-4">
                             <a href="/account" class="btn btn-primary btn-block"
-                               style="background-color: #9966cc; border: #9966cc;">Аккаунт</a>
+                               style="background-color: #8247be; border: #8247be;">Аккаунт</a>
                         </div>
                         <div class="col-md-4">
                             <button type="button" class="btn btn-warning btn-block" onclick="confirmReset()"
-                                    style="background-color: #FFD500; border: #9966cc; color: #fff;">Сбросить
+                                    style="background-color: #92256E; border: #92256E; color: #fff;">Сбросить
                                 прогресс
                             </button>
                         </div>

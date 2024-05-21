@@ -44,6 +44,7 @@
             align-items: end;
             justify-content: center;
             height: 100%;
+            padding-bottom: 10%;
         }
 
         .FOX img {
@@ -73,7 +74,7 @@
 
             <div style="
             min-width: 400px;
-            margin: 10% 0;
+            margin: 15% 0 0;
             background: #f9f9f9;
             padding: 30px;
             border-radius: 20px;
