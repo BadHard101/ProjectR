@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class UserCryptanalysisLevel2Service {
+public class UserCryptanalysisLevel3Service {
     private final UserRepository userRepository;
 
     /**
      * Theory
      */
-    public void check_Level2_theory(Answers answers, User user) { // CHANGE
+    public void check_Level3_theory(Answers answers, User user) { // CHANGE
         if (user.getCryptoProgress() <= 0) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
@@ -26,9 +26,9 @@ public class UserCryptanalysisLevel2Service {
     /**
      * Practice 1
      */
-    public boolean[] check_Level2_practice1(Answers answers, User user) { // CHANGE
+    public boolean[] check_Level3_practice1(Answers answers, User user) { // CHANGE
         boolean[] result = {false};
-        if (answers.getAnswer1().equals("45333")) {
+        if (answers.getAnswer1().equals("73")) {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 1) { // CHANGE
@@ -43,9 +43,9 @@ public class UserCryptanalysisLevel2Service {
     /**
      * Practice 2
      */
-    public boolean[] check_Level2_practice2(Answers answers, User user) { // CHANGE
+    public boolean[] check_Level3_practice2(Answers answers, User user) { // CHANGE
         boolean[] result = {false};
-        if (answers.getAnswer1().equals("0.0")) {
+        if (answers.getAnswer1().equals("Нет")) {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 2) { // CHANGE
@@ -60,9 +60,9 @@ public class UserCryptanalysisLevel2Service {
     /**
      * Practice 3
      */
-    public boolean[] check_Level2_practice3(Answers answers, User user) { // CHANGE
+    public boolean[] check_Level3_practice3(Answers answers, User user) { // CHANGE
         boolean[] result = {false};
-        if (answers.getAnswer1().equals("True")) {
+        if (answers.getAnswer1().equals("61")) {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 3) { // CHANGE
@@ -77,11 +77,11 @@ public class UserCryptanalysisLevel2Service {
     /**
      * Control
      */
-    public boolean[] check_Level2_control(Answers answers, User user) { // CHANGE
+    public boolean[] check_Level3_control(Answers answers, User user) { // CHANGE
         boolean[] result = {false, false, false};
-        if (answers.getAnswer1().equals("80.0"))
+        if (answers.getAnswer1().equals("2"))
             result[0] = true;
-        if (answers.getAnswer2().equals("76.43"))
+        if (answers.getAnswer2().equals("7046742763"))
             result[1] = true;
 
         if (result[0] && result[1]
