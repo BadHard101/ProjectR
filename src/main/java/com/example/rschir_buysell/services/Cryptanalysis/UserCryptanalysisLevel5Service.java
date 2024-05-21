@@ -17,7 +17,7 @@ public class UserCryptanalysisLevel5Service {
      * Theory
      */
     public void check_Level5_theory(Answers answers, User user) { // CHANGE
-        if (user.getCryptoProgress() <= 0) { // CHANGE
+        if (user.getCryptoProgress() <= 21) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
@@ -27,7 +27,7 @@ public class UserCryptanalysisLevel5Service {
      * Practice 1
      */
     public void check_Level5_practice1(Answers answers, User user) { // CHANGE
-        if (user.getCryptoProgress() <= 0) { // CHANGE
+        if (user.getCryptoProgress() <= 22) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
@@ -41,7 +41,7 @@ public class UserCryptanalysisLevel5Service {
         if (answers.getAnswer1().equals("4,16,16,12,10,6,20")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 2) { // CHANGE
+            if (user.getCryptoProgress() <= 23) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -58,7 +58,7 @@ public class UserCryptanalysisLevel5Service {
         if (answers.getAnswer1().equals("Giovan Battista Bellaso")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 3) { // CHANGE
+            if (user.getCryptoProgress() <= 24) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -78,7 +78,7 @@ public class UserCryptanalysisLevel5Service {
             result[1] = true;
 
         if (result[0] && result[1]
-                && user.getCryptoProgress() <= 4) { // CHANGE
+                && user.getCryptoProgress() <= 25) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }

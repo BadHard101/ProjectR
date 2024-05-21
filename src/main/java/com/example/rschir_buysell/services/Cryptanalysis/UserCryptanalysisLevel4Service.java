@@ -17,7 +17,7 @@ public class UserCryptanalysisLevel4Service {
      * Theory
      */
     public void check_Level4_theory(Answers answers, User user) { // CHANGE
-        if (user.getCryptoProgress() <= 0) { // CHANGE
+        if (user.getCryptoProgress() <= 15) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
@@ -31,7 +31,7 @@ public class UserCryptanalysisLevel4Service {
         if (answers.getAnswer1().equals("127")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 1) { // CHANGE
+            if (user.getCryptoProgress() <= 16) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -48,7 +48,7 @@ public class UserCryptanalysisLevel4Service {
         if (answers.getAnswer1().equals("(1319, 90)")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 2) { // CHANGE
+            if (user.getCryptoProgress() <= 17) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -65,7 +65,7 @@ public class UserCryptanalysisLevel4Service {
         if (answers.getAnswer1().equals("vR]$!f %=I#]?!%~`]`I")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 3) { // CHANGE
+            if (user.getCryptoProgress() <= 18) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -82,7 +82,7 @@ public class UserCryptanalysisLevel4Service {
         if (answers.getAnswer1().equals("deserve")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 3) { // CHANGE
+            if (user.getCryptoProgress() <= 19) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -98,13 +98,15 @@ public class UserCryptanalysisLevel4Service {
         boolean[] result = {false, false, false};
         if (answers.getAnswer1().equals("W31zU1UE5'[h^v)jUE5^j[b"))
             result[0] = true;
-        if (answers.getAnswer2().equals("мультипликативные"))
+        if (answers.getAnswer2().equals("мультипликативные") ||
+                answers.getAnswer2().equals("Мультипликативные"))
             result[1] = true;
-        if (answers.getAnswer3().equals("нет"))
+        if (answers.getAnswer3().equals("нет") ||
+                answers.getAnswer2().equals("Нет"))
             result[2] = true;
 
         if (result[0] && result[1] && result[2]
-                && user.getCryptoProgress() <= 4) { // CHANGE
+                && user.getCryptoProgress() <= 20) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }

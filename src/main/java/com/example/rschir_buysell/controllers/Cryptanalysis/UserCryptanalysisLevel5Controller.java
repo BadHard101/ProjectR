@@ -26,6 +26,9 @@ public class UserCryptanalysisLevel5Controller {
     @GetMapping("/open_Level5_theory")
     public String open_Level5_theory(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getCryptoProgress() < 21) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "cryptanalysis/level5/theory";
     }
 
@@ -43,7 +46,7 @@ public class UserCryptanalysisLevel5Controller {
     @GetMapping("/open_Level5_practice1")
     public String open_Level5_practice1(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 1) {
+        if (user.getCryptoProgress() < 22) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level5/practice1";
@@ -63,7 +66,7 @@ public class UserCryptanalysisLevel5Controller {
     @GetMapping("/open_Level5_practice2")
     public String open_Level5_practice2(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 2) {
+        if (user.getCryptoProgress() < 23) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level5/practice2";
@@ -83,7 +86,7 @@ public class UserCryptanalysisLevel5Controller {
     @GetMapping("/open_Level5_practice3") // CHANGE
     public String open_Level5_practice3(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 3) {
+        if (user.getCryptoProgress() < 24) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level5/practice3"; // CHANGE
@@ -103,7 +106,7 @@ public class UserCryptanalysisLevel5Controller {
     @GetMapping("/open_Level5_control") // CHANGE
     public String open_Level5_control(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 4) {
+        if (user.getCryptoProgress() < 25) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level5/control"; // CHANGE

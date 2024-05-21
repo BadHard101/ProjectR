@@ -2,96 +2,96 @@
     <form action="/open_Level6_theory" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 5>;background-color: #8247be; border: #8247be;</#if>"
-                <#if user.cryptoProgress lt 5>disabled</#if>>Теория
+                <#if user.cryptoProgress gt 26>;background-color: #8247be; border: #8247be;</#if>"
+                <#if user.cryptoProgress lt 26>disabled</#if>>Теория
         </button>
     </form>
     <form action="/open_Level6_practice0" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 6>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 6>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 6>disabled</#if>>Подготовка
+                <#if user.cryptoProgress gt 27>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 27>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 27>disabled</#if>>Подготовка
         </button>
     </form>
     <form action="/open_Level6_practice1" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 7>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 7>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 7>disabled</#if>>Этап I
+                <#if user.cryptoProgress gt 28>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 28>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 28>disabled</#if>>Этап I
         </button>
     </form>
     <form action="/open_Level6_practice2" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 8>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 8>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 8>disabled</#if>>Этап II
+                <#if user.cryptoProgress gt 29>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 29>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 29>disabled</#if>>Этап II
         </button>
     </form>
     <form action="/open_Level6_practice3" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 9>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 9>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 9>disabled</#if>>Этап III
+                <#if user.cryptoProgress gt 30>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 30>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 30>disabled</#if>>Этап III
         </button>
     </form>
     <form action="/open_Level6_practice4" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 10>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 10>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 10>disabled</#if>>Этап IV
+                <#if user.cryptoProgress gt 31>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 31>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 31>disabled</#if>>Этап IV
         </button>
     </form>
     <form action="/open_Level6_practice5" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 11>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 11>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 11>disabled</#if>>Этап V
+                <#if user.cryptoProgress gt 32>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 32>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 32>disabled</#if>>Этап V
         </button>
     </form>
     <form action="/open_Level6_practice6" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 12>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 12>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 12>disabled</#if>>Этап VI
+                <#if user.cryptoProgress gt 33>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 33>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 33>disabled</#if>>Этап VI
         </button>
     </form>
     <form action="/open_Level6_practice7" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 13>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 13>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 13>disabled</#if>>Этап VII
+                <#if user.cryptoProgress gt 34>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 34>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 34>disabled</#if>>Этап VII
         </button>
     </form>
     <form action="/open_Level6_practice8" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 14>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 14>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 14>disabled</#if>>Этап VIII
+                <#if user.cryptoProgress gt 35>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 35>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 35>disabled</#if>>Этап VIII
         </button>
     </form>
     <form action="/open_Level6_practice9" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 15>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 15>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 15>disabled</#if>>Этап IX
+                <#if user.cryptoProgress gt 36>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 36>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 36>disabled</#if>>Этап IX
         </button>
     </form>
     <form action="/open_Level6_control" method="get">
         <button type="submit" class="btn btn-primary m-1"
                 style="width: 10rem; background-color: #669bce; border: #669bce
-                <#if user.cryptoProgress gt 16>;background-color: #8247be; border: #8247be;</#if>
-                <#if user.cryptoProgress lt 16>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
-                <#if user.cryptoProgress lt 16>disabled</#if>>Контроль
+                <#if user.cryptoProgress gt 37>;background-color: #8247be; border: #8247be;</#if>
+                <#if user.cryptoProgress lt 37>;background-color: #A9A9A9; border: #A9A9A9;</#if>"
+                <#if user.cryptoProgress lt 37>disabled</#if>>Контроль
         </button>
     </form>
 </div>

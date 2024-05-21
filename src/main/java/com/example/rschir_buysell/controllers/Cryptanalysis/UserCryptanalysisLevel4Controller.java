@@ -26,6 +26,9 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_theory")
     public String open_Level4_theory(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getCryptoProgress() < 15) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "cryptanalysis/level4/theory";
     }
 
@@ -43,7 +46,7 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_practice1")
     public String open_Level4_practice1(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 1) {
+        if (user.getCryptoProgress() < 16) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level4/practice1";
@@ -63,7 +66,7 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_practice2")
     public String open_Level4_practice2(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 2) {
+        if (user.getCryptoProgress() < 17) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level4/practice2";
@@ -83,7 +86,7 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_practice3") // CHANGE
     public String open_Level4_practice3(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 3) {
+        if (user.getCryptoProgress() < 18) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level4/practice3"; // CHANGE
@@ -103,7 +106,7 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_practice4") // CHANGE
     public String open_Level4_practice4(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 10) {
+        if (user.getCryptoProgress() < 19) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level4/practice4"; // CHANGE
@@ -123,7 +126,7 @@ public class UserCryptanalysisLevel4Controller {
     @GetMapping("/open_Level4_control") // CHANGE
     public String open_Level4_control(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 4) {
+        if (user.getCryptoProgress() < 20) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level4/control"; // CHANGE

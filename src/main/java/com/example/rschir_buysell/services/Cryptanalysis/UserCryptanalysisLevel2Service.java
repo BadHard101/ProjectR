@@ -17,7 +17,7 @@ public class UserCryptanalysisLevel2Service {
      * Theory
      */
     public void check_Level2_theory(Answers answers, User user) { // CHANGE
-        if (user.getCryptoProgress() <= 0) { // CHANGE
+        if (user.getCryptoProgress() <= 5) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
@@ -31,7 +31,7 @@ public class UserCryptanalysisLevel2Service {
         if (answers.getAnswer1().equals("45333")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 1) { // CHANGE
+            if (user.getCryptoProgress() <= 6) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -48,7 +48,7 @@ public class UserCryptanalysisLevel2Service {
         if (answers.getAnswer1().equals("0.0")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 2) { // CHANGE
+            if (user.getCryptoProgress() <= 7) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -65,7 +65,7 @@ public class UserCryptanalysisLevel2Service {
         if (answers.getAnswer1().equals("True")) {
             result[0] = true;
 
-            if (user.getCryptoProgress() <= 3) { // CHANGE
+            if (user.getCryptoProgress() <= 8) { // CHANGE
                 user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
@@ -85,7 +85,7 @@ public class UserCryptanalysisLevel2Service {
             result[1] = true;
 
         if (result[0] && result[1]
-                && user.getCryptoProgress() <= 4) { // CHANGE
+                && user.getCryptoProgress() <= 9) { // CHANGE
             user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }

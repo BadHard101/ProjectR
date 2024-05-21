@@ -26,7 +26,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_theory")
     public String open_Level6_theory(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 5) {
+        if (user.getCryptoProgress() < 26) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/theory";
@@ -46,7 +46,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice0")
     public String open_Level6_practice0(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 6) {
+        if (user.getCryptoProgress() < 27) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice0";
@@ -66,7 +66,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice1")
     public String open_Level6_practice1(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 7) {
+        if (user.getCryptoProgress() < 28) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice1";
@@ -86,7 +86,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice2")
     public String open_Level6_practice2(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 8) {
+        if (user.getCryptoProgress() < 29) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice2";
@@ -106,7 +106,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice3") // CHANGE
     public String open_Level6_practice3(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 9) {
+        if (user.getCryptoProgress() < 30) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice3"; // CHANGE
@@ -126,7 +126,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice4") // CHANGE
     public String open_Level6_practice4(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 10) {
+        if (user.getCryptoProgress() < 31) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice4"; // CHANGE
@@ -146,7 +146,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice5") // CHANGE
     public String open_Level6_practice5(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 11) {
+        if (user.getCryptoProgress() < 32) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice5"; // CHANGE
@@ -155,7 +155,7 @@ public class UserCryptanalysisLevel6Controller {
     @PostMapping("/check_Level6_practice5") // CHANGE
     public String check_Level6_practice5(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
         userCryptanalysisLevel6Service.check_Level6_practice5(answers, user); // CHANGE
         return "cryptanalysis/level6/practice5"; // CHANGE
     }
@@ -166,7 +166,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice6") // CHANGE
     public String open_Level6_practice6(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 12) {
+        if (user.getCryptoProgress() < 33) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice6"; // CHANGE
@@ -175,7 +175,7 @@ public class UserCryptanalysisLevel6Controller {
     @PostMapping("/check_Level6_practice6") // CHANGE
     public String check_Level6_practice6(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
         userCryptanalysisLevel6Service.check_Level6_practice6(answers, user); // CHANGE
         return "cryptanalysis/level6/practice6"; // CHANGE
     }
@@ -186,7 +186,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice7") // CHANGE
     public String open_Level6_practice7(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 13) {
+        if (user.getCryptoProgress() < 34) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice7"; // CHANGE
@@ -195,7 +195,7 @@ public class UserCryptanalysisLevel6Controller {
     @PostMapping("/check_Level6_practice7") // CHANGE
     public String check_Level6_practice7(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
         userCryptanalysisLevel6Service.check_Level6_practice7(answers, user); // CHANGE
         return "cryptanalysis/level6/practice7"; // CHANGE
     }
@@ -206,7 +206,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice8") // CHANGE
     public String open_Level6_practice8(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 14) {
+        if (user.getCryptoProgress() < 35) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice8"; // CHANGE
@@ -215,7 +215,7 @@ public class UserCryptanalysisLevel6Controller {
     @PostMapping("/check_Level6_practice8") // CHANGE
     public String check_Level6_practice8(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Супер, теперь перейдем к заданию!");
         userCryptanalysisLevel6Service.check_Level6_practice8(answers, user); // CHANGE
         return "cryptanalysis/level6/practice8"; // CHANGE
     }
@@ -226,7 +226,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_practice9") // CHANGE
     public String open_Level6_practice9(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 15) {
+        if (user.getCryptoProgress() < 36) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/practice9"; // CHANGE
@@ -247,7 +247,7 @@ public class UserCryptanalysisLevel6Controller {
     @GetMapping("/open_Level6_control") // CHANGE
     public String open_Level6_control(Model model, @AuthenticationPrincipal User user) { // CHANGE
         model.addAttribute("user", user);
-        if (user.getCryptoProgress() < 16) {
+        if (user.getCryptoProgress() < 37) {
             return "redirect:/openCryptanalysisLevels";
         }
         return "cryptanalysis/level6/control"; // CHANGE
