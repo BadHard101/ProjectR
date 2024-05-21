@@ -21,9 +21,8 @@
         position: relative;
         display: inline-block;
         border-radius: 10px;
-        padding: 1% 3%;
+        padding: 0 3% 0 3%;
         margin-top: 1%;
-        margin-bottom: 2%;
     }
 
     .overlay::after {
@@ -41,36 +40,24 @@
 </style>
 <div class="overlay">
     <div class="mt-4">
-        <h3>Практика. Этап III: Получение первичного ключа</h3>
+        <h3>Практика. Этап VI: Перестановка букв ключа</h3>
         <p></p>
         <p>
-            Теперь, когда у вас есть массив частот каждой буквы алфавита, можно создать первичный ключ – он представляет
-            собой массив символов алфавита, упорядоченный по убыванию их частот появления в шифротексте. При этом в случае,
-            если у двух букв частоты совпадают, в ключ сначала записывается первая из этих букв по алфавиту.
-        </p>
-        <p>
-            <b>Задание:</b> Запишите полученный на основе буквенных частот первичный ключ.
+            Внутри созданного цикла создайте еще один – цикл for в промежутке от 0 до 26 (для перебора вариаций букв
+            алфавита), в котором будет производиться основная масса операций, связанных с перестановкой букв. Необходимо
+            помнить, что шаг соседства в сумме с номером итерации цикла for не должен выходить за пределы длины алфавита.
+            Поменяйте i-ый и (i+1)-ый символы ключа местами и сохраните в отдельный запасной словарь текущие частоты
+            биграмм.
         </p>
 
         <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
-        <form action="/check_Level2_practice3" method="post" class="mt-4">
-            <div class="form-group">
-                <label for="question1">Ответ:</label>
-                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                       type="text" id="question1" name="answer1" class="form-control"
-                       <#if answers??>value="${answers.getAnswer1()}"</#if>>
-                <#if result??>
-                    <#if result[0]>
-                        <span style="color: #4b0082">Верно</span>
-                    <#else>
-                        <span style="color: #e80101">Неверно</span>
-                    </#if>
-                </#if>
-            </div>
-
+        <#if openPracLable??>
+            <h2 style="color: #4B0082">${openPracLable}</h2>
+        </#if>
+        <form action="/check_Level6_practice6" method="post" class="mt-4 mb-4">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
         </form>
 
         <#if errorMessage??>

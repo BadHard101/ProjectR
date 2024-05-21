@@ -40,30 +40,47 @@
     }
 </style>
 <div class="overlay">
-    <div class="mt-4">
-        <h3>Практика. Этап VIII: Пересчет рейтинга биграмм обновленного ключа</h3>
-        <p>
-            Пришла пора обнулить рейтинг биграмм и пересчитать его с учетом нового ключа так же, как на этапе IV. Следующий
-            шаг предпринимается исходя из того, улучшился ли рейтинг биграмм: если он остался тем же или ухудшился – буквы
-            ключа возвращаются на исходные места, и частоты биграмм восстанавливаются из сохраненного ранее словаря; если же
-            рейтинг биграмм улучшился (т. е. стал меньше предыдущего) – логическая флаг-переменная изменяет свое значение,
-            новый рейтинг биграмм заносится в резервную переменную, шаг соседства устанавливается на единицу.
-        </p>
+<div class="mt-4">
+    <h3>Практика. Этап II: Подсчет частоты букв в шифротексте</h3>
+    <p></p>
+    <p>
+        Итак, подготовительные работы выполнены, можно приступать к взлому шифра. Первым делом необходимо подсчитать,
+        сколько раз каждая буква встречается в заданном шифротексте – это нужно для того, чтобы при генерировании
+        первичного ключа не «тыкать пальцем в небо», а сразу же использовать статистические данные для минимизации
+        времени последующего подгона. Для этого создайте новый массив, подсчитайте сначала количество появлений каждой
+        буквы алфавита в шифротексте, а затем их частоту (считается как (
+        &lt;кол-во букв&gt; / &lt;длина шифротекста&gt; * 100)).
+    </p>
+    <p>
+        <b>Задание:</b> Вычислите частоты букв и выведите частоту появления в шифротексте буквы «f» (результат округлите
+        до тысячных).
+    </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
-        <#if openPracLable??>
-            <h2 style="color: #4B0082">${openPracLable}</h2>
-        </#if>
-        <form action="/check_Level2_practice8" method="post" class="mt-4 mb-4">
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
-        </form>
+    <form action="/check_Level6_practice2" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="question1">Ответ:</label>
+            <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
+                    type="text" id="question1" name="answer1" class="form-control"
+                   <#if answers??>value="${answers.getAnswer1()}"</#if>>
+            <#if result??>
+                <#if result[0]>
+                    <span style="color: #4b0082">Верно</span>
+                <#else>
+                    <span style="color: #e80101">Неверно</span>
+                </#if>
+            </#if>
+        </div>
 
-        <#if errorMessage??>
-            <h2 style="color: red">${errorMessage}</h2>
-        </#if>
-    </div>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
+    </form>
+
+    <#if errorMessage??>
+        <h2 style="color: red">${errorMessage}</h2>
+    </#if>
+</div>
 </div>
 <!-- Окно меню подсказки -->
 <div id="menu" class="popup">

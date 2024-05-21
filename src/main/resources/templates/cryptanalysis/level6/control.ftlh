@@ -17,6 +17,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
         backdrop-filter: blur(6px); /* Эффект размытия фона */
     }
+
     .overlay {
         position: relative;
         display: inline-block;
@@ -43,7 +44,7 @@
     <div class="mt-4">
         <h3>Контроль</h3>
 
-        <form action="/check_Level2_control" method="post" class="mt-4">
+        <form action="/check_Level6_control" method="post" class="mt-4">
             <h3>Задания:</h3>
             <div class="form-group">
                 <label for="question1">
@@ -97,7 +98,9 @@
             </div>
 
             <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">
+                Проверить
+            </button>
         </form>
     </div>
     <#if errorMessage??>

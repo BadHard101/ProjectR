@@ -40,64 +40,31 @@
     }
 </style>
 <div class="overlay">
-<div class="mt-4">
-    <h3>Практика. Этап IX: Проверка наличия успешной перестановки при проходе</h3>
-    <p>
-        На этом этапе работа выходит из цикла for, но не из бесконечного цикла: тут необходимо выполнить проверку
-        логической флаг-переменной – если ее значение после выхода из цикла for не изменилось, нужно увеличить шаг
-        соседства на единицу (не забывая про ограничение в длину алфавита).
-    </p>
-    <p>
-        После выхода из бесконечного цикла изначальный ключ претерпевает многократные перестановки, проверки и пересчет
-        рейтингов биграмм. Как результат – полученный ключ должен расшифровывать изначальный шифротекст.
-    </p>
+    <div class="mt-4">
+        <h3>Практика. Этап VIII: Пересчет рейтинга биграмм обновленного ключа</h3>
+        <p>
+            Пришла пора обнулить рейтинг биграмм и пересчитать его с учетом нового ключа так же, как на этапе IV. Следующий
+            шаг предпринимается исходя из того, улучшился ли рейтинг биграмм: если он остался тем же или ухудшился – буквы
+            ключа возвращаются на исходные места, и частоты биграмм восстанавливаются из сохраненного ранее словаря; если же
+            рейтинг биграмм улучшился (т. е. стал меньше предыдущего) – логическая флаг-переменная изменяет свое значение,
+            новый рейтинг биграмм заносится в резервную переменную, шаг соседства устанавливается на единицу.
+        </p>
 
-    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
-    <form action="/check_Level2_practice9" method="post" class="mt-4">
-        <h3>Задания:</h3>
-        <div class="form-group">
-            <label for="question1">
-                Выведите итоговый ключ, высчитанный программой.
-            </label>
-            <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                    type="text" id="question1" name="answer1" class="form-control"
-                   <#if answers??>value="${answers.getAnswer1()}"</#if>>
-            <#if result??>
-                <#if result[0]>
-                    <span style="color: #4b0082">Верно</span>
-                <#else>
-                    <span style="color: #e80101">Неверно</span>
-                </#if>
-            </#if>
-        </div>
+        <#if openPracLable??>
+            <h2 style="color: #4B0082">${openPracLable}</h2>
+        </#if>
+        <form action="/check_Level6_practice8" method="post" class="mt-4 mb-4">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
+        </form>
 
-        <div class="form-group">
-            <label for="question2">
-                Напишите первые 12 букв расшифрованного текста.
-            </label>
-            <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                    type="text" id="question2" name="answer2" class="form-control"
-                   <#if answers??>value="${answers.getAnswer2()}"</#if>>
-            <#if result??>
-                <#if result[1]>
-                    <span style="color: #4b0082">Верно</span>
-                <#else>
-                    <span style="color: #e80101">Неверно</span>
-                </#if>
-            </#if>
-        </div>
-
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
-    </form>
-
-    <#if errorMessage??>
-        <h2 style="color: red">${errorMessage}</h2>
-    </#if>
-</div>
+        <#if errorMessage??>
+            <h2 style="color: red">${errorMessage}</h2>
+        </#if>
     </div>
-
+</div>
 <!-- Окно меню подсказки -->
 <div id="menu" class="popup">
     <h2>Выберите подсказку</h2>

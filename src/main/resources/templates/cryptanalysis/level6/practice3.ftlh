@@ -21,8 +21,9 @@
         position: relative;
         display: inline-block;
         border-radius: 10px;
-        padding: 0 3% 0 3%;
+        padding: 1% 3%;
         margin-top: 1%;
+        margin-bottom: 2%;
     }
 
     .overlay::after {
@@ -40,27 +41,36 @@
 </style>
 <div class="overlay">
     <div class="mt-4">
-        <h3>Практика. Этап V: Задание цикла перестановок символов ключа</h3>
+        <h3>Практика. Этап III: Получение первичного ключа</h3>
         <p></p>
         <p>
-            С этого этапа начинается самая сложная с точки зрения понимания и технической реализации часть. Дело в том, что
-            после того, как были получены результаты первичного ключа, начинается процедура подгона ключа для улучшения
-            рейтинга биграмм до тех пор, пока он не станет постоянным. Подгон выполняется путем перестановки двух
-            произвольных букв ключа, после чего пересчитываются частоты биграмм, содержащих переставленные буквы.
+            Теперь, когда у вас есть массив частот каждой буквы алфавита, можно создать первичный ключ – он представляет
+            собой массив символов алфавита, упорядоченный по убыванию их частот появления в шифротексте. При этом в случае,
+            если у двух букв частоты совпадают, в ключ сначала записывается первая из этих букв по алфавиту.
         </p>
         <p>
-            Для начала сохраните существующий рейтинг биграмм в отдельную переменную – он потребуется позже, а также
-            установите логическую флаг-переменную для обозначения найденной полезной биграммы. Далее установите стартовое
-            количество шагов соседства на единицу, после чего создайте бесконечный цикл, условием выхода из которого будет
-            превышение количеством шагов соседства длины алфавита.
+            <b>Задание:</b> Запишите полученный на основе буквенных частот первичный ключ.
         </p>
 
-        <#if openPracLable??>
-            <h2 style="color: #4B0082">${openPracLable}</h2>
-        </#if>
-        <form action="/check_Level2_practice5" method="post" class="mt-4 mb-4">
+        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+
+        <form action="/check_Level6_practice3" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="question1">Ответ:</label>
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
+                       type="text" id="question1" name="answer1" class="form-control"
+                       <#if answers??>value="${answers.getAnswer1()}"</#if>>
+                <#if result??>
+                    <#if result[0]>
+                        <span style="color: #4b0082">Верно</span>
+                    <#else>
+                        <span style="color: #e80101">Неверно</span>
+                    </#if>
+                </#if>
+            </div>
+
             <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
         </form>
 
         <#if errorMessage??>

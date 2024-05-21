@@ -40,29 +40,58 @@
     }
 </style>
 <div class="overlay">
-<div class="mt-4">
-    <h3>Практика. Этап VII: Изменение частот биграмм после перестановки букв</h3>
-    <p></p>
-    <p>
-        После того, как буквы i и (i+1) ключа переставлены, нужно изменить частоты биграмм, в которых они присутствуют.
-        Например, если в ключе поменялись местами буквы «a» и «b», но меняются местами также и частоты: f(ax) -> f(bx),
-        f(bx) -> f(ax), f(xa) -> f(xb), f(xb) -> f(xa), f(aa) -> f(bb), f(bb) -> f(aa).
-    </p>
+    <div class="mt-4">
+        <h3>Практика. Этап I: Создание необходимых для работы элементов</h3>
+        <p></p>
+        <p>
+            Во время работы по взлому данного шифра будет необходимо периодически пробовать дешифровать шифротекст при
+            помощи получаемого ключа. В связи с этим, Вам нужно создать отдельную функцию, преобразующую шифротекст схожим
+            образом с тем, как уровнем ранее Вы сдвигали буквы в алфавите на фиксированное число шагов (только теперь одни
+            буквы произвольно сменяются другими). На вход данная функция должна принимать:
+        </p>
+        <p>
+            Для того, чтобы выполнить дешифрование текста, зашифрованного шифром Цезаря, Вам понадобятся следующие элементы:
+        </p>
+        <ul>
+            <li>
+                шифротекст – текстовую строку произвольной длины;
+            </li>
+            <li>
+                ключ – массив символов алфавита.
+            </li>
+        </ul>
 
-    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <p>
+            <b>Задание:</b> Подайте на вход созданной Вами функции дешифрования шифротекст «abcddbaccabd» и ключ [‘b’, ‘c’,
+            ‘d’, ‘a’]. В ответе напишите получившийся результат.
+        </p>
 
-    <#if openPracLable??>
-        <h2 style="color: #4B0082">${openPracLable}</h2>
-    </#if>
-    <form action="/check_Level2_practice7" method="post" class="mt-4 mb-4">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
-    </form>
+        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
-    <#if errorMessage??>
-        <h2 style="color: red">${errorMessage}</h2>
-    </#if>
-</div>
+        <form action="/check_Level6_practice1" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="question1">Ответ:</label>
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
+                       type="text" id="question1" name="answer1"
+                       class="form-control"
+                       <#if answers??>value="${answers.getAnswer1()}"</#if>>
+                <#if result??>
+                    <#if result[0]>
+                        <span style="color: #4b0082">Верно</span>
+                    <#else>
+                        <span style="color: #e80101">Неверно</span>
+                    </#if>
+                </#if>
+            </div>
+
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
+        </form>
+
+        <#if errorMessage??>
+            <h2 style="color: red">${errorMessage}</h2>
+        </#if>
+    </div>
 </div>
 <!-- Окно меню подсказки -->
 <div id="menu" class="popup">

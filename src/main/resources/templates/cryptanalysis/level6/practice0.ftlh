@@ -53,7 +53,7 @@
     <#if openPracLable??>
         <h2 style="color: #4B0082">${openPracLable}</h2>
     </#if>
-    <form action="/check_Level2_practice0" method="post" class="mt-4 mb-4">
+    <form action="/check_Level6_practice0" method="post" class="mt-4 mb-4">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
     </form>

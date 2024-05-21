@@ -40,67 +40,30 @@
     }
 </style>
 <div class="overlay">
-    <div class="mt-4">
-        <h3>Практика. Этап IV: Пробное дешифрование и вычисление рейтинга биграмм</h3>
-        <p></p>
-        <p>
-            Теперь, когда первичный ключ получен, пришло время первой пробной попытки дешифрования при помощи созданной Вами
-            ранее функции. Сохраните результат ее работы в отдельную переменную, после чего можно приступать к анализу
-            биграмм: для этого, используя импортированный в самом начале пустой словарь частот биграмм, пройдитесь по длине
-            всего шифротекста и подсчитайте сначала количество, а затем частоты появления в нем биграмм, аналогично тому,
-            как Вы делали это для букв. После того, как все частоты будут подсчитаны, сформируйте итоговый рейтинг биграмм
-            для первичного ключа, определенного формулой:
-        </p>
-        <p>
-            ∑ (&lt;частота отдельной биграммы&gt; - &lt;эталонная частота этой биграммы&gt;)<sup>2</sup>.
-        </p>
+<div class="mt-4">
+    <h3>Практика. Этап VII: Изменение частот биграмм после перестановки букв</h3>
+    <p></p>
+    <p>
+        После того, как буквы i и (i+1) ключа переставлены, нужно изменить частоты биграмм, в которых они присутствуют.
+        Например, если в ключе поменялись местами буквы «a» и «b», но меняются местами также и частоты: f(ax) -> f(bx),
+        f(bx) -> f(ax), f(xa) -> f(xb), f(xb) -> f(xa), f(aa) -> f(bb), f(bb) -> f(aa).
+    </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
-        <form action="/check_Level2_practice4" method="post" class="mt-4">
-            <h3>Задания:</h3>
-            <div class="form-group">
-                <label for="question1">
-                    На этапе подсчета количества появлений биграмм в шифротексте выведите число встречи биграммы «ck».
-                </label>
-                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                        type="text" id="question1" name="answer1" class="form-control"
-                       <#if answers??>value="${answers.getAnswer1()}"</#if>>
-                <#if result??>
-                    <#if result[0]>
-                        <span style="color: #4b0082">Верно</span>
-                    <#else>
-                        <span style="color: #e80101">Неверно</span>
-                    </#if>
-                </#if>
-            </div>
+    <#if openPracLable??>
+        <h2 style="color: #4B0082">${openPracLable}</h2>
+    </#if>
+    <form action="/check_Level6_practice7" method="post" class="mt-4 mb-4">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!</button>
+    </form>
 
-            <div class="form-group">
-                <label for="question2">
-                    Запишите подсчитанный рейтинг биграмм для первичного ключа (результат округлите до тысячных).
-                </label>
-                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                        type="text" id="question2" name="answer2" class="form-control"
-                       <#if answers??>value="${answers.getAnswer2()}"</#if>>
-                <#if result??>
-                    <#if result[1]>
-                        <span style="color: #4b0082">Верно</span>
-                    <#else>
-                        <span style="color: #e80101">Неверно</span>
-                    </#if>
-                </#if>
-            </div>
-
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
-        </form>
-
-        <#if errorMessage??>
-            <h2 style="color: red">${errorMessage}</h2>
-        </#if>
-    </div>
+    <#if errorMessage??>
+        <h2 style="color: red">${errorMessage}</h2>
+    </#if>
 </div>
-
+</div>
 <!-- Окно меню подсказки -->
 <div id="menu" class="popup">
     <h2>Выберите подсказку</h2>
