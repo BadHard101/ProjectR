@@ -78,7 +78,7 @@ public class UserCryptanalysisLevel2Service {
      * Control
      */
     public boolean[] check_Level2_control(Answers answers, User user) { // CHANGE
-        boolean[] result = {false, false, false};
+        boolean[] result = {false, false};
         if (answers.getAnswer1().equals("80.0"))
             result[0] = true;
         if (answers.getAnswer2().equals("76.43"))

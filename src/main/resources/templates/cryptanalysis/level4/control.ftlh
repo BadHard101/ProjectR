@@ -44,14 +44,13 @@
     <div class="mt-4">
         <h3>Контроль</h3>
 
-        <form action="/check_Level2_control" method="post" class="mt-4">
+        <form action="/check_Level4_control" method="post" class="mt-4">
             <h3>Задания:</h3>
             <div class="form-group">
                 <label for="question1">
-                    Модифицируйте программу так, чтобы она возвращала не булево значение, а процент «английскости»
-                    текста, то есть среднее между долями распознанных английских слов и букв. Например, если текст
-                    содержит 80% английских слов и 95% букв, то функция вернет 87.5%. Какое значение в таком случае
-                    выведет программа, если подать ей на вход все ту же строку «bear Middle adfnbgu HORSE HHEUVKZf»?
+                    Опираясь на полученные знания о работе аффинного шифра, реализуйте в программе функцию шифрования
+                    произвольного сообщения по заданному ключу. Какую строку, в таком случае, Вы получите при попытке
+                    зашифровать предложение «What a wonderful world!» с ключом, равным 1397?
                 </label>
                 <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
                        type="text" id="question1" name="answer1" class="form-control"
@@ -67,14 +66,31 @@
 
             <div class="form-group">
                 <label for="question2">
-                    Подайте на вход написанной Вами программы строку «caramba4 Tea SPOON iS 2heavY» и выведите результат
-                    работы модифицированной программы.
+                    Как называются шифры, в основе которых лежит не прибавление или вычитание значений ключа из индексов
+                    символов шифруемого текста, а их перемножение?
                 </label>
                 <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
                        type="text" id="question2" name="answer2" class="form-control"
                        <#if answers??>value="${answers.getAnswer2()}"</#if>>
                 <#if result??>
                     <#if result[1]>
+                        <span style="color: #4b0082">Верно</span>
+                    <#else>
+                        <span style="color: #e80101">Неверно</span>
+                    </#if>
+                </#if>
+            </div>
+
+            <div class="form-group">
+                <label for="question3">
+                    Можно ли использовать для шифрования аффинным шифром ключ, часть a которого равна 21, при мощности
+                    алфавита в 198?
+                </label>
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
+                       type="text" id="question3" name="answer3" class="form-control"
+                       <#if answers??>value="${answers.getAnswer3()}"</#if>>
+                <#if result??>
+                    <#if result[2]>
                         <span style="color: #4b0082">Верно</span>
                     <#else>
                         <span style="color: #e80101">Неверно</span>
@@ -93,7 +109,7 @@
     </#if>
 
     <#if result??>
-        <#if result[0] && result[1] >
+        <#if result[0] && result[1] && result[2] >
             <div class="popup" id="popup">
                 <h1>Поздравляем!</h1>
                 <h3>Вы прошли первый уровень!</h3>

@@ -89,7 +89,7 @@
     </#if>
 
     <#if result??>
-        <#if result[0] && result[1] && result[2] >
+        <#if result[0] && result[1] >
             <div class="popup" id="popup">
                 <h1>Поздравляем!</h1>
                 <h3>Вы прошли первый уровень!</h3>
