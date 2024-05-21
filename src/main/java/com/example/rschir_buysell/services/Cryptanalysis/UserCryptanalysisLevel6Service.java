@@ -1,4 +1,4 @@
-package com.example.rschir_buysell.services.Cryptanalysis.Level6;
+package com.example.rschir_buysell.services.Cryptanalysis;
 
 import com.example.rschir_buysell.models.Answers;
 import com.example.rschir_buysell.models.User;

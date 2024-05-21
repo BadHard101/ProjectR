@@ -1,8 +1,8 @@
-package com.example.rschir_buysell.controllers.Cryptanalysis.Level1;
+package com.example.rschir_buysell.controllers.Cryptanalysis;
 
 import com.example.rschir_buysell.models.Answers;
 import com.example.rschir_buysell.models.User;
-import com.example.rschir_buysell.services.Cryptanalysis.Level1.UserCryptanalysisLevel1Service;
+import com.example.rschir_buysell.services.Cryptanalysis.UserCryptanalysisLevel1Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * Level 1
+ * Level1
  */
 @Controller
 @RequiredArgsConstructor
