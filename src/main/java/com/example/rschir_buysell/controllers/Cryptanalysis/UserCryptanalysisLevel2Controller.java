@@ -32,7 +32,7 @@ public class UserCryptanalysisLevel2Controller {
     @PostMapping("/check_Level2_theory")
     public String check_Level2_theory(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, теперь вам доступно практическое задание!");
         userCryptanalysisLevel2Service.check_Level2_theory(answers, user);
         return "cryptanalysis/level2/theory";
     }

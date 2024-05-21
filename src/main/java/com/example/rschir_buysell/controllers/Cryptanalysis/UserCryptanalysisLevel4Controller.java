@@ -32,7 +32,7 @@ public class UserCryptanalysisLevel4Controller {
     @PostMapping("/check_Level4_theory")
     public String check_Level4_theory(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, теперь вам доступно практическое задание!");
         userCryptanalysisLevel4Service.check_Level4_theory(answers, user);
         return "cryptanalysis/level4/theory";
     }

@@ -55,7 +55,7 @@ public class UserCryptanalysisLevel6Controller {
     @PostMapping("/check_Level6_practice0")
     public String check_Level6_practice0(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Теперь вам доступно практическое задание!");
         userCryptanalysisLevel6Service.check_Level6_practice0(answers, user);
         return "cryptanalysis/level6/practice0";
     }
