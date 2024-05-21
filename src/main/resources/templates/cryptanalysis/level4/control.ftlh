@@ -112,13 +112,13 @@
         <#if result[0] && result[1] && result[2] >
             <div class="popup" id="popup">
                 <h1>Поздравляем!</h1>
-                <h3>Вы прошли первый уровень!</h3>
+                <h3>Вы прошли четвертый уровень!</h3>
                 <img src="https://media1.tenor.com/m/0pmPIX08hQUAAAAC/goku-dragon-ball-level-up-anime-gif.gif"
                      alt="Ваше изображение">
                 <hr>
                 <a href="/openCryptanalysisLevels" class="btn btn-primary"
                    style="background-color: #9966cc; border: #9966cc;">Перейти к списку
-                    уровней</a> <#--TODO: Сделать переход на второй уровень-->
+                    уровней</a>
             </div>
         </#if>
     </#if>

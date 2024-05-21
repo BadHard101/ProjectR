@@ -120,7 +120,7 @@
                 <hr>
                 <a href="/openCryptanalysisLevels" class="btn btn-primary"
                    style="background-color: #9966cc; border: #9966cc;">Перейти к списку
-                    уровней</a> <#--TODO: Сделать переход на второй уровень-->
+                    уровней</a>
             </div>
         </#if>
     </#if>
