@@ -14,6 +14,8 @@
             /*background 2 - AuthBG*/
             background: url("https://i.ibb.co/WVfTQ7b/bg4.png") no-repeat center top;
             /*color: #2a2828;*/
+            background-size: cover;
+            height: 100vh;
         }
 
         body {
