@@ -33,6 +33,12 @@ public class User implements UserDetails {
     private String name;
 
     @Column
+    @NotEmpty(message = "Телефон не должен быть пустым")
+    @Pattern(regexp = "(^$|[0-9]{11})",
+            message = "Некорректный номер телефона")
+    private String phoneNumber;
+
+    @Column
     private boolean active;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
