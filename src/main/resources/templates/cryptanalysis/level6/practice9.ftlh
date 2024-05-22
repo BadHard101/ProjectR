@@ -52,7 +52,9 @@
         рейтингов биграмм. Как результат – полученный ключ должен расшифровывать изначальный шифротекст.
     </p>
 
-    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+    <button id="openMenuButton" class="btn btn-primary"
+            style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+    </button>
 
     <form action="/check_Level6_practice9" method="post" class="mt-4">
         <h3>Задания:</h3>

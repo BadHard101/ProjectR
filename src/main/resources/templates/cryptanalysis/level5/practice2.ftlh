@@ -56,7 +56,9 @@
             полученные после работы функции на текущем этапе с ключом «C».
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level5_practice2" method="post" class="mt-4">
             <div class="form-group">

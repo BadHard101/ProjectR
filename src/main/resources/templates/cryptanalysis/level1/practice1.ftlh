@@ -17,6 +17,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
         backdrop-filter: blur(6px); /* Эффект размытия фона */
     }
+
     .overlay {
         position: relative;
         display: inline-block;
@@ -45,18 +46,21 @@
         <p></p>
         <p>
             Для взлома шифра и данного и всех последующих уровней мы будем создавать программы на языке Python. Для
-            упрощения процесса написания программ, а также уменьшения количества допускаемых в ходе работы ошибок, каждый
+            упрощения процесса написания программ, а также уменьшения количества допускаемых в ходе работы ошибок,
+            каждый
             новый этап представленной инструкции будет сопровождаться проверочным заданием, чтобы убедиться, что Вы
             движетесь в правильном направлении.
         </p>
         <p>
-            Для того, чтобы выполнить дешифрование текста, зашифрованного шифром Цезаря, Вам понадобятся следующие элементы:
+            Для того, чтобы выполнить дешифрование текста, зашифрованного шифром Цезаря, Вам понадобятся следующие
+            элементы:
         <ul>
             <li>
                 Сам шифротекст. Для примера шифротекст представляет собой строку «yfljvfwkyvizjzexjle»;
             </li>
             <li>
-                Алфавит. В данном примере используется английский алфавит из 26 символов (как и шифротекст, буквы взяты в
+                Алфавит. В данном примере используется английский алфавит из 26 символов (как и шифротекст, буквы взяты
+                в
                 нижнем регистре);
             </li>
             <li>
@@ -69,13 +73,10 @@
         <p>
             <b>Задание:</b> Выведите длину строки шифротекста.
         </p>
-        <#--<p><b>Задание:</b> Греческий советник получил послание от одного из разведчиков на клочке бумаги, состоящее из
-            несвязных букв. Помогите Астериксу узнать тайный смысл записки и вовремя защитить свои территории.</p>
-        <p><b>Послание:</b> ЫРЬНЪОЪ ГФЭЧЛ ШЛЬЮЛ ЩЛ УЛЦЛЮР ФЮЛЧФК ЫЧЛЩФЬЯРЮ УЛБНЛЮ ЪЭЮЬЪНЛ ЦРЬЦФЬЛ</p>
-        <p><b>Используемый шифр:</b> шифр Цезаря</p>-->
 
         <button id="openMenuButton" class="btn btn-primary"
-                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка</button>
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level1_practice1" method="post" class="mt-4">
             <div class="form-group">
@@ -94,7 +95,8 @@
 
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit" class="btn btn-primary"
-                    style="margin-bottom:15px; background-color: #4B0082; border: #4B0082;">Проверить</button>
+                    style="margin-bottom:15px; background-color: #4B0082; border: #4B0082;">Проверить
+            </button>
         </form>
 
         <#if errorMessage??>
@@ -108,15 +110,15 @@
 
         <div style="display: flex; flex-direction: row">
             <button id="openEmptyMassiveButton" class="btn btn-primary mr-2">Пустые массивы</button>
-<#--            <button id="openAlphabetButton" class="btn btn-primary mr-2">Алфавит</button>-->
-<#--            <button id="openLengthButton" class="btn btn-primary mr-2">Длина строки</button>-->
-<#--            <button id="openCodeButton" class="btn btn-warning mr-2" style="display: none">Код фрагмента</button>-->
+            <button id="openAlphabetButton" class="btn btn-primary mr-2">Алфавит</button>
+            <button id="openStringLengthButton" class="btn btn-primary mr-2">Длина строки</button>
+            <button id="openCodeFragmentButton" class="btn btn-primary mr-2">Код фрагмента</button>
 
             <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
         </div>
     </div>
 
-    <!-- Окно Метода подсказки -->
+    <!-- Окно -->
     <div id="emptyMassive" class="popup">
         <h2>Пустые массивы</h2>
         <p>
@@ -126,32 +128,42 @@
         <button id="closeEmptyMassiveButton" class="btn btn-danger">Закрыть</button>
     </div>
 
-    <!-- Окно Ключа подсказки -->
-    <div id="key" class="popup">
-        <h2>Ключ</h2>
-        <p>Ключ: -12</p>
-        <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
+    <!-- Окно -->
+    <div id="alphabet" class="popup">
+        <h2>Алфавит</h2>
+        <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
+        <button id="closeAlphabetButton" class="btn btn-danger">Закрыть</button>
     </div>
 
-    <!-- Окно Ответа подсказки -->
-    <div id="result" class="popup">
-        <h2>Ответ</h2>
-        <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-        <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
+    <!-- Окно -->
+    <div id="stringLength" class="popup">
+        <h2>Длина строки</h2>
+        <p>Длину строки или массива элементов можно узнать при помощи команды len(&lt;массив или строка&gt;).</p>
+        <button id="closeStringLengthButton" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="codeFragment" class="popup">
+        <h2>Код фрагмента</h2>
+        <p>ciphertext = "yfljvfwkyvizjzexjle"</p>
+        <p>ciphertext_index = [None] * len(ciphertext)</p>
+        <p>alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+            't', 'u', 'v', 'w', 'x', 'y', 'z']
+        </p>
+        <p>deciphered = [None] * len(ciphertext)</p>
+        <button id="closeCodeFragmentButton" class="btn btn-danger">Закрыть</button>
     </div>
 
     <script>
-        let resultCounter = 0;
-        const needForResult = 3;
-
         const openMenuButton = document.getElementById('openMenuButton');
         const menu = document.getElementById('menu');
         const closeMenuButton = document.getElementById('closeMenuButton');
 
         openMenuButton.addEventListener('click', function () {
-            result.style.display = 'none';
-            key.style.display = 'none';
             emptyMassive.style.display = 'none';
+            alphabet.style.display = 'none';
+            stringLength.style.display = 'none';
+            codeFragment.style.display = 'none';
             menu.style.display = 'block';
         });
 
@@ -166,48 +178,50 @@
         openEmptyMassiveButton.addEventListener('click', function () {
             menu.style.display = 'none';
             emptyMassive.style.display = 'block';
-
-            resultCounter = resultCounter + 1;
-            if (resultCounter === needForResult) {
-                openResultButton.style.display = 'block';
-            }
         });
 
         closeEmptyMassiveButton.addEventListener('click', function () {
             emptyMassive.style.display = 'none';
         });
 
-        const openKeyButton = document.getElementById('openKeyButton');
-        const key = document.getElementById('key');
-        const closeKeyButton = document.getElementById('closeKeyButton');
+        const openAlphabetButton = document.getElementById('openAlphabetButton');
+        const alphabet = document.getElementById('alphabet');
+        const closeAlphabetButton = document.getElementById('closeAlphabetButton');
 
-        openKeyButton.addEventListener('click', function () {
+        openAlphabetButton.addEventListener('click', function () {
             menu.style.display = 'none';
-            key.style.display = 'block';
-
-            resultCounter = resultCounter + 1;
-            if (resultCounter === needForResult) {
-                openResultButton.style.display = 'block';
-            }
+            alphabet.style.display = 'block';
         });
 
-        closeKeyButton.addEventListener('click', function () {
-            key.style.display = 'none';
+        closeAlphabetButton.addEventListener('click', function () {
+            alphabet.style.display = 'none';
         });
 
-        const openResultButton = document.getElementById('openResultButton');
-        const result = document.getElementById('result');
-        const closeResultButton = document.getElementById('closeResultButton');
+        const openStringLengthButton = document.getElementById('openStringLengthButton');
+        const stringLength = document.getElementById('stringLength');
+        const closeStringLengthButton = document.getElementById('closeStringLengthButton');
 
-        openResultButton.addEventListener('click', function () {
+        openStringLengthButton.addEventListener('click', function () {
             menu.style.display = 'none';
-            result.style.display = 'block';
+            stringLength.style.display = 'block';
         });
 
-        closeResultButton.addEventListener('click', function () {
-            result.style.display = 'none';
+        closeStringLengthButton.addEventListener('click', function () {
+            stringLength.style.display = 'none';
         });
 
+        const openCodeFragmentButton = document.getElementById('openCodeFragmentButton');
+        const codeFragment = document.getElementById('codeFragment');
+        const closeCodeFragmentButton = document.getElementById('closeCodeFragmentButton');
+
+        openCodeFragmentButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+            codeFragment.style.display = 'block';
+        });
+
+        closeCodeFragmentButton.addEventListener('click', function () {
+            codeFragment.style.display = 'none';
+        });
     </script>
 </div>
 <#include "../../footer.ftlh">

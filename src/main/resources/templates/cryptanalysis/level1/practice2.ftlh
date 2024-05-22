@@ -17,6 +17,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
         backdrop-filter: blur(6px); /* Эффект размытия фона */
     }
+
     .overlay {
         position: relative;
         display: inline-block;
@@ -44,20 +45,23 @@
         <h3>Практика. Этап II: Создание и заполнение массива индексов шифротекста</h3>
         <p></p>
         <p>
-            Теперь для удобства самого дальнейшего процесса расшифрования создадим еще один массив – в него будут записаны
+            Теперь для удобства самого дальнейшего процесса расшифрования создадим еще один массив – в него будут
+            записаны
             номера букв шифротекста в алфавите.
         </p>
         <p>
             <b>Задание:</b> Запишите через запятую, без пробелов индексы 4 последних букв шифротекста.
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level1_practice2" method="post" class="mt-4">
             <div class="form-group">
                 <label for="question1">Ответ:</label>
                 <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                        type="text" id="question1" name="answer1" class="form-control"
+                       type="text" id="question1" name="answer1" class="form-control"
                        <#if answers??>value="${answers.getAnswer1()}"</#if>>
                 <#if result??>
                     <#if result[0]>
@@ -70,7 +74,8 @@
 
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button style="margin-bottom:15px; background-color: #4B0082; border: #4B0082;"
-                    type="submit" class="btn btn-primary">Проверить</button>
+                    type="submit" class="btn btn-primary">Проверить
+            </button>
         </form>
 
         <#if errorMessage??>
@@ -84,58 +89,51 @@
     <h2>Выберите подсказку</h2>
 
     <div style="display: flex; flex-direction: row">
-        <form action="/open_Level1_theory" method="get" class="mr-2">
-            <button type="submit" class="btn btn-primary">О шифре</button>
-        </form>
-        <button id="openMethodButton" class="btn btn-primary mr-2">Метод</button>
-        <button id="openKeyButton" class="btn btn-primary mr-2">Ключ</button>
-        <button id="openResultButton" class="btn btn-warning mr-2" style="display: none">Ответ</button>
+        <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+        <button id="openH2Button" class="btn btn-primary mr-2">Индексы символов</button>
+        <button id="openH3Button" class="btn btn-primary mr-2">Код фрагмента</button>
 
         <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
     </div>
 </div>
 
-<!-- Окно Метода подсказки -->
-<div id="method" class="popup">
-    <h2>Метод</h2>
+<div id="H1" class="popup">
+    <h2>Методика реализации</h2>
     <p>
-        Малое пространство ключей делает брут-форс самым эффективным и простым вариантом атаки на шифр Цезаря.
-        Брутфорс, или атака полным перебором, — это метод атаки с угадыванием паролей, учетных данных для входа в
-        систему, ключей шифрования и прочей информации. Это метод проб и ошибок, цель которого — перебрать все возможные
-        комбинации для получения правильного пароля.
-        Для вскрытия необходимо каждую букву шифртекста заменить буквой, стоящей на один знак левее в алфавите. Если в
-        результате этого не удалось получить читаемое сообщение, то необходимо повторить действие, но уже сместив буквы
-        на два знака левее. И так далее, пока в результате не получится читаемый текст.
+        Используйте цикл, проходящий по алфавиту, вложенный в другой цикл – проходящий по длине шифротекста, сравнивая и
+        ища совпадения среди букв.
     </p>
-    <button id="closeMethodButton" class="btn btn-danger">Закрыть</button>
+    <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
 </div>
 
-<!-- Окно Ключа подсказки -->
-<div id="key" class="popup">
-    <h2>Ключ</h2>
-    <p>Ключ: -12</p>
-    <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
+<div id="H2" class="popup">
+    <h2>Индексы символов</h2>
+    <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
+    <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
 </div>
 
-<!-- Окно Ответа подсказки -->
-<div id="result" class="popup">
-    <h2>Ответ</h2>
-    <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-    <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
+<div id="H3" class="popup">
+    <h2>Код фрагмента</h2>
+    <pre>
+<code>
+for i in range(len(ciphertext)):
+    for j in range(len(alphabet)):
+        if ciphertext[i] == alphabet[j]:
+            ciphertext_index[i] = j
+</code>
+</pre>
+    <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
 </div>
 
 <script>
-    let resultCounter = 0;
-    const needForResult = 2;
-
     const openMenuButton = document.getElementById('openMenuButton');
     const menu = document.getElementById('menu');
     const closeMenuButton = document.getElementById('closeMenuButton');
 
     openMenuButton.addEventListener('click', function () {
-        result.style.display = 'none';
-        key.style.display = 'none';
-        method.style.display = 'none';
+        H1.style.display = 'none';
+        H2.style.display = 'none';
+        H3.style.display = 'none';
         menu.style.display = 'block';
     });
 
@@ -143,55 +141,43 @@
         menu.style.display = 'none';
     });
 
-    const openMethodButton = document.getElementById('openMethodButton');
-    const method = document.getElementById('method');
-    const closeMethodButton = document.getElementById('closeMethodButton');
+    const openH1Button = document.getElementById('openH1Button');
+    const H1 = document.getElementById('H1');
+    const closeH1Button = document.getElementById('closeH1Button');
 
-    openMethodButton.addEventListener('click', function () {
+    openH1Button.addEventListener('click', function () {
         menu.style.display = 'none';
-        method.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
+        H1.style.display = 'block';
     });
 
-    closeMethodButton.addEventListener('click', function () {
-        method.style.display = 'none';
+    closeH1Button.addEventListener('click', function () {
+        H1.style.display = 'none';
     });
 
-    const openKeyButton = document.getElementById('openKeyButton');
-    const key = document.getElementById('key');
-    const closeKeyButton = document.getElementById('closeKeyButton');
+    const openH2Button = document.getElementById('openH2Button');
+    const H2 = document.getElementById('H2');
+    const closeH2Button = document.getElementById('closeH2Button');
 
-    openKeyButton.addEventListener('click', function () {
+    openH2Button.addEventListener('click', function () {
         menu.style.display = 'none';
-        key.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
+        H2.style.display = 'block';
     });
 
-    closeKeyButton.addEventListener('click', function () {
-        key.style.display = 'none';
+    closeH2Button.addEventListener('click', function () {
+        H2.style.display = 'none';
     });
 
-    const openResultButton = document.getElementById('openResultButton');
-    const result = document.getElementById('result');
-    const closeResultButton = document.getElementById('closeResultButton');
+    const openH3Button = document.getElementById('openH3Button');
+    const H3 = document.getElementById('H3');
+    const closeH3Button = document.getElementById('closeH3Button');
 
-    openResultButton.addEventListener('click', function () {
+    openH3Button.addEventListener('click', function () {
         menu.style.display = 'none';
-        result.style.display = 'block';
+        H3.style.display = 'block';
     });
 
-    closeResultButton.addEventListener('click', function () {
-        result.style.display = 'none';
+    closeH3Button.addEventListener('click', function () {
+        H3.style.display = 'none';
     });
-
 </script>
-
 <#include "../../footer.ftlh">

@@ -84,7 +84,9 @@
             <b>Задание:</b> Какое значение выведет функция поиска числа, обратного числу 46 по модулю 85?
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level3_practice3" method="post" class="mt-4">
             <div class="form-group">

@@ -53,7 +53,9 @@
             <b>Задание:</b> Какое значение выведет данная функция при подаче ей на вход ключ-число 126714?
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level4_practice2" method="post" class="mt-4">
             <div class="form-group">

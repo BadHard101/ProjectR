@@ -56,7 +56,9 @@
         до тысячных).
     </p>
 
-    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+    <button id="openMenuButton" class="btn btn-primary"
+            style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+    </button>
 
     <form action="/check_Level6_practice2" method="post" class="mt-4">
         <div class="form-group">

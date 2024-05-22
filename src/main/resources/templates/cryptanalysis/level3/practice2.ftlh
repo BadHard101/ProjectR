@@ -57,7 +57,9 @@
             <b>Задание:</b> Вернет ли функция значение None при a = 78838 и m = 245712135?
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level3_practice2" method="post" class="mt-4">
             <div class="form-group">
