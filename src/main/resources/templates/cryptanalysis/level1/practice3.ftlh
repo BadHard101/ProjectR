@@ -17,6 +17,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
         backdrop-filter: blur(6px); /* Эффект размытия фона */
     }
+
     .overlay {
         position: relative;
         display: inline-block;
@@ -46,16 +47,20 @@
         <p></p>
         <p>
             Последний этап, который позволит нам наконец получить исходное сообщение – это перебор всех ключей, которые
-            могли использоваться для шифрования исходного текста. Для этого заполняйте пустующий массив буквами шифротекста
-            с индексами, сдвинутыми на прогрессивно возрастающее значение применяемого ключа, после чего выведите полученную
-            строку на экран, пока она не станет осмысленной. Помните: при выходе индекса буквы за пределы длины алфавита, он
+            могли использоваться для шифрования исходного текста. Для этого заполняйте пустующий массив буквами
+            шифротекста
+            с индексами, сдвинутыми на прогрессивно возрастающее значение применяемого ключа, после чего выведите
+            полученную
+            строку на экран, пока она не станет осмысленной. Помните: при выходе индекса буквы за пределы длины
+            алфавита, он
             уменьшается на эту самую длину алфавита.
         <ul>
             <li>
                 Сам шифротекст. Для примера шифротекст представляет собой строку «yfljvfwkyvizjzexjle»;
             </li>
             <li>
-                Алфавит. В данном примере используется английский алфавит из 26 символов (как и шифротекст, буквы взяты в
+                Алфавит. В данном примере используется английский алфавит из 26 символов (как и шифротекст, буквы взяты
+                в
                 нижнем регистре);
             </li>
             <li>
@@ -85,127 +90,137 @@
 
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button style="margin-bottom:15px; background-color: #4B0082; border: #4B0082;"
-                    type="submit" class="btn btn-primary">Проверить</button>
+                    type="submit" class="btn btn-primary">Проверить
+            </button>
         </form>
 
         <#if errorMessage??>
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
-</div>
-<!-- Окно меню подсказки -->
-<div id="menu" class="popup">
-    <h2>Выберите подсказку</h2>
 
-    <div style="display: flex; flex-direction: row">
-        <form action="/open_Level1_theory" method="get" class="mr-2">
-            <button type="submit" class="btn btn-primary">О шифре</button>
-        </form>
-        <button id="openMethodButton" class="btn btn-primary mr-2">Метод</button>
-        <button id="openKeyButton" class="btn btn-primary mr-2">Ключ</button>
-        <button id="openResultButton" class="btn btn-warning mr-2" style="display: none">Ответ</button>
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
 
-        <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Перебор вариантов</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Перенос из конца в начало алфавита</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Массив в строку</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
     </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Перебор вариантов</h2>
+        <p>
+            Нет смысла проверять исходный вариант шифротекста (с ключом, равным размеру алфавита).
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Перенос из конца в начало алфавита</h2>
+        <p>
+            Сдвиг символов из конца алфавита вправо переносит их в начало – для реализации этого используйте оператор
+            «%», возвращающий остаток от деления одного числа на другое, для определения нового индекса символа.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H3" class="popup">
+        <h2>Массив в строку</h2>
+        <p>
+            Для того, чтобы объединить массив отдельных символов в единую строку используйте конструкцию ‘’.join(
+            &lt;переменная-массив&gt;).
+        </p>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+for i in range(len(alphabet) - 1):
+    for j in range(len(ciphertext_index)):
+        deciphered[j] = alphabet[(ciphertext_index[j] + i + 1) % len(alphabet)]
+    print(''.join(deciphered), '\n')</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
+
+        openH3Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H3.style.display = 'block';
+        });
+
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
-
-<!-- Окно Метода подсказки -->
-<div id="method" class="popup">
-    <h2>Метод</h2>
-    <p>
-        Малое пространство ключей делает брут-форс самым эффективным и простым вариантом атаки на шифр Цезаря.
-        Брутфорс, или атака полным перебором, — это метод атаки с угадыванием паролей, учетных данных для входа в
-        систему, ключей шифрования и прочей информации. Это метод проб и ошибок, цель которого — перебрать все возможные
-        комбинации для получения правильного пароля.
-        Для вскрытия необходимо каждую букву шифртекста заменить буквой, стоящей на один знак левее в алфавите. Если в
-        результате этого не удалось получить читаемое сообщение, то необходимо повторить действие, но уже сместив буквы
-        на два знака левее. И так далее, пока в результате не получится читаемый текст.
-    </p>
-    <button id="closeMethodButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ключа подсказки -->
-<div id="key" class="popup">
-    <h2>Ключ</h2>
-    <p>Ключ: -12</p>
-    <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ответа подсказки -->
-<div id="result" class="popup">
-    <h2>Ответ</h2>
-    <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-    <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<script>
-    let resultCounter = 0;
-    const needForResult = 2;
-
-    const openMenuButton = document.getElementById('openMenuButton');
-    const menu = document.getElementById('menu');
-    const closeMenuButton = document.getElementById('closeMenuButton');
-
-    openMenuButton.addEventListener('click', function () {
-        result.style.display = 'none';
-        key.style.display = 'none';
-        method.style.display = 'none';
-        menu.style.display = 'block';
-    });
-
-    closeMenuButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-    });
-
-    const openMethodButton = document.getElementById('openMethodButton');
-    const method = document.getElementById('method');
-    const closeMethodButton = document.getElementById('closeMethodButton');
-
-    openMethodButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        method.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeMethodButton.addEventListener('click', function () {
-        method.style.display = 'none';
-    });
-
-    const openKeyButton = document.getElementById('openKeyButton');
-    const key = document.getElementById('key');
-    const closeKeyButton = document.getElementById('closeKeyButton');
-
-    openKeyButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        key.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeKeyButton.addEventListener('click', function () {
-        key.style.display = 'none';
-    });
-
-    const openResultButton = document.getElementById('openResultButton');
-    const result = document.getElementById('result');
-    const closeResultButton = document.getElementById('closeResultButton');
-
-    openResultButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        result.style.display = 'block';
-    });
-
-    closeResultButton.addEventListener('click', function () {
-        result.style.display = 'none';
-    });
-
-</script>
-
 <#include "../../footer.ftlh">

@@ -82,102 +82,100 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
-</div>
 
-<!-- Окно меню подсказки -->
-<div id="menu" class="popup">
-    <h2>Выберите подсказку</h2>
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
 
-    <div style="display: flex; flex-direction: row">
-        <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
-        <button id="openH2Button" class="btn btn-primary mr-2">Индексы символов</button>
-        <button id="openH3Button" class="btn btn-primary mr-2">Код фрагмента</button>
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Индексы символов</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Код фрагмента</button>
 
-        <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
     </div>
-</div>
 
-<div id="H1" class="popup">
-    <h2>Методика реализации</h2>
-    <p>
-        Используйте цикл, проходящий по алфавиту, вложенный в другой цикл – проходящий по длине шифротекста, сравнивая и
-        ища совпадения среди букв.
-    </p>
-    <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
-</div>
+    <div id="H1" class="popup">
+        <h2>Методика реализации</h2>
+        <p>
+            Используйте цикл, проходящий по алфавиту, вложенный в другой цикл – проходящий по длине шифротекста,
+            сравнивая и
+            ища совпадения среди букв.
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
 
-<div id="H2" class="popup">
-    <h2>Индексы символов</h2>
-    <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
-    <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
-</div>
+    <div id="H2" class="popup">
+        <h2>Индексы символов</h2>
+        <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
 
-<div id="H3" class="popup">
-    <h2>Код фрагмента</h2>
-    <pre>
-<code>
+    <div id="H3" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
 for i in range(len(ciphertext)):
     for j in range(len(alphabet)):
         if ciphertext[i] == alphabet[j]:
-            ciphertext_index[i] = j
-</code>
-</pre>
-    <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+            ciphertext_index[i] = j</code></pre>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
+
+        openH3Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H3.style.display = 'block';
+        });
+
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
+        });
+    </script>
 </div>
-
-<script>
-    const openMenuButton = document.getElementById('openMenuButton');
-    const menu = document.getElementById('menu');
-    const closeMenuButton = document.getElementById('closeMenuButton');
-
-    openMenuButton.addEventListener('click', function () {
-        H1.style.display = 'none';
-        H2.style.display = 'none';
-        H3.style.display = 'none';
-        menu.style.display = 'block';
-    });
-
-    closeMenuButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-    });
-
-    const openH1Button = document.getElementById('openH1Button');
-    const H1 = document.getElementById('H1');
-    const closeH1Button = document.getElementById('closeH1Button');
-
-    openH1Button.addEventListener('click', function () {
-        menu.style.display = 'none';
-        H1.style.display = 'block';
-    });
-
-    closeH1Button.addEventListener('click', function () {
-        H1.style.display = 'none';
-    });
-
-    const openH2Button = document.getElementById('openH2Button');
-    const H2 = document.getElementById('H2');
-    const closeH2Button = document.getElementById('closeH2Button');
-
-    openH2Button.addEventListener('click', function () {
-        menu.style.display = 'none';
-        H2.style.display = 'block';
-    });
-
-    closeH2Button.addEventListener('click', function () {
-        H2.style.display = 'none';
-    });
-
-    const openH3Button = document.getElementById('openH3Button');
-    const H3 = document.getElementById('H3');
-    const closeH3Button = document.getElementById('closeH3Button');
-
-    openH3Button.addEventListener('click', function () {
-        menu.style.display = 'none';
-        H3.style.display = 'block';
-    });
-
-    closeH3Button.addEventListener('click', function () {
-        H3.style.display = 'none';
-    });
-</script>
 <#include "../../footer.ftlh">
