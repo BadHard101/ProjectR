@@ -89,5 +89,147 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
+
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
+
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Возможные значения ключа</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Переход на следующую итерацию цикла</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Несколько вариантов</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Возможные значения ключа</h2>
+        <p>
+            Возможных значений ключа, разбивающегося на ключи a и b, принимающих значения от 0 до количества символов в
+            алфавите, соответственно равно количеству символов в алфавите в квадрате.
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Переход на следующую итерацию цикла</h2>
+        <p>
+            Досрочно перейти с одного прохода цикла на следующий позволяет команда continue.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H3" class="popup">
+        <h2>Несколько вариантов</h2>
+        <p>
+            При проверке функцией распознавания английского языка программа может вывести ошибочный результат – не стоит
+            от него отказываться, но предусмотрите возможность продолжить вычисления и перебор до полного соответствия.
+        </p>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+def hackAffine(message):
+    for key in range(len(SYMBOLS) ** 2):
+        keyA = getKeyParts(key)[0]
+        keyB = getKeyParts(key)[1]
+        if (&lt;функция поиска НОД&gt;(keyA, len(SYMBOLS)) != 1):
+            continue
+        decryptedText = decryptMessage(key, message)
+        if detectEnglish.isEnglish(decryptedText):
+            print()
+            print('Possible encryption hack:')
+            print('Key: %s' % (key))
+            print('Decrypted message: ' + decryptedText[:200])
+            print()
+            print('Enter D for done, or just press Enter to continue hacking:')
+            response = input('&gt; ')
+            if response.strip().upper().startswith('D'):
+                return decryptedText
+    return None            symIndex = SYMBOLS.find(symbol)
+            plaintext += SYMBOLS[(symIndex - keyB) * modInverseOfKeyA % len(SYMBOLS)]
+        else:
+            plaintext += symbol
+    return plaintext</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
+
+        openH3Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H3.style.display = 'block';
+        });
+
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
 <#include "../../footer.ftlh">
