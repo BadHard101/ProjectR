@@ -91,17 +91,17 @@
         <h2>Код фрагмента</h2>
         <pre><code>
 bigrammsRating = 0
-            for k, v in bigramms.items():
-                bigrammsRating += (bigramms[k] - bigrammsFreqsStandart[k]) ** 2
-            if bigrammsRating &lt; prevBigrammsRating:
-                findGoodBigrammFlag = True
-                prevBigrammsRating = bigrammsRating
-                step = 1
-                break
-            else:
-                key[i], key[i + step] = key[i + step], key[i]
-                for k, v in copyBigrammsFreq.items():
-                    bigramms[k] = v</code></pre>
+    for k, v in bigramms.items():
+        bigrammsRating += (bigramms[k] - bigrammsFreqsStandart[k]) ** 2
+    if bigrammsRating &lt; prevBigrammsRating:
+        findGoodBigrammFlag = True
+        prevBigrammsRating = bigrammsRating
+        step = 1
+        break
+    else:
+        key[i], key[i + step] = key[i + step], key[i]
+        for k, v in copyBigrammsFreq.items():
+            bigramms[k] = v</code></pre>
         <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
     </div>
 
