@@ -127,8 +127,7 @@
 for i in range(len(ciphertext)):
     for j in range(len(alphabet)):
         if ciphertext[i] == alphabet[j]:
-            ciphertext_index[i] = j
-        </p></pre>
+            ciphertext_index[i] = j</p></pre>
         <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
     </div>
 
