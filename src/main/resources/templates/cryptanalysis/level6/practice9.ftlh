@@ -127,7 +127,7 @@
         <pre><code>
 if findGoodBigrammFlag == False:
             step += 1
-            if step >= 25:
+            if step &gt;= 25:
                 break
     print('Итоговый ключ &gt;', ''.join(key))
     return key
