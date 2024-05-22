@@ -89,51 +89,69 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openEmptyMassiveButton" class="btn btn-primary mr-2">Пустые массивы</button>
-            <#--            <button id="openAlphabetButton" class="btn btn-primary mr-2">Алфавит</button>-->
-            <#--            <button id="openLengthButton" class="btn btn-primary mr-2">Длина строки</button>-->
-            <#--            <button id="openCodeButton" class="btn btn-warning mr-2" style="display: none">Код фрагмента</button>-->
+            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Перевод регистров</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Обозначения спец. символов</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
 
             <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
         </div>
     </div>
 
-    <!-- Окно Метода подсказки -->
-    <div id="emptyMassive" class="popup">
-        <h2>Пустые массивы</h2>
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Методика реализации</h2>
         <p>
-            Для создания пустых массивов фиксированной длины используйте конструкцию
-            вида &lt;имя пустого массива&gt; = [None] * &lt;длина пустого массива&gt;.
+            Используйте словарь для эффективного поиска, читайте файл построчно, разделяя на слова.
         </p>
-        <button id="closeEmptyMassiveButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
     </div>
 
-    <!-- Окно Ключа подсказки -->
-    <div id="key" class="popup">
-        <h2>Ключ</h2>
-        <p>Ключ: -12</p>
-        <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Перевод регистров</h2>
+        <p>
+            Перевод букв в верхний и нижний регистр осуществляется командами .lower() и .upper(), соответственно.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
     </div>
 
-    <!-- Окно Ответа подсказки -->
-    <div id="result" class="popup">
-        <h2>Ответ</h2>
-        <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-        <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
+    <!-- Окно -->
+    <div id="H3" class="popup">
+        <h2>Обозначения спец. символов</h2>
+        <p>
+            Символ переноса строки обозначается как “\n”, а знак табуляции – как “\t”.
+        </p>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+UPPERLETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LETTERS_AND_SPACE = UPPERLETTERS + UPPERLETTERS.lower() + ' \t\n'
+def loadDictionary():
+    dictionaryFile = open('dictionary.txt')
+    englishWords = {}
+    for word in dictionaryFile.read().split('\n'):
+        englishWords[word] = None
+    dictionaryFile.close()
+    return englishWords
+ENGLISH_WORDS = loadDictionary()</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <script>
-        let resultCounter = 0;
-        const needForResult = 3;
-
         const openMenuButton = document.getElementById('openMenuButton');
         const menu = document.getElementById('menu');
         const closeMenuButton = document.getElementById('closeMenuButton');
 
         openMenuButton.addEventListener('click', function () {
-            result.style.display = 'none';
-            key.style.display = 'none';
-            emptyMassive.style.display = 'none';
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
             menu.style.display = 'block';
         });
 
@@ -141,55 +159,57 @@
             menu.style.display = 'none';
         });
 
-        const openEmptyMassiveButton = document.getElementById('openEmptyMassiveButton');
-        const emptyMassive = document.getElementById('emptyMassive');
-        const closeEmptyMassiveButton = document.getElementById('closeEmptyMassiveButton');
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
 
-        openEmptyMassiveButton.addEventListener('click', function () {
+        openH1Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            emptyMassive.style.display = 'block';
-
-            resultCounter = resultCounter + 1;
-            if (resultCounter === needForResult) {
-                openResultButton.style.display = 'block';
-            }
+            H1.style.display = 'block';
         });
 
-        closeEmptyMassiveButton.addEventListener('click', function () {
-            emptyMassive.style.display = 'none';
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
         });
 
-        const openKeyButton = document.getElementById('openKeyButton');
-        const key = document.getElementById('key');
-        const closeKeyButton = document.getElementById('closeKeyButton');
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
 
-        openKeyButton.addEventListener('click', function () {
+        openH2Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            key.style.display = 'block';
-
-            resultCounter = resultCounter + 1;
-            if (resultCounter === needForResult) {
-                openResultButton.style.display = 'block';
-            }
+            H2.style.display = 'block';
         });
 
-        closeKeyButton.addEventListener('click', function () {
-            key.style.display = 'none';
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
         });
 
-        const openResultButton = document.getElementById('openResultButton');
-        const result = document.getElementById('result');
-        const closeResultButton = document.getElementById('closeResultButton');
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
 
-        openResultButton.addEventListener('click', function () {
+        openH3Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            result.style.display = 'block';
+            H3.style.display = 'block';
         });
 
-        closeResultButton.addEventListener('click', function () {
-            result.style.display = 'none';
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
         });
 
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
     </script>
 </div>
 <#include "../../footer.ftlh">

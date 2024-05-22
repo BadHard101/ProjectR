@@ -131,26 +131,29 @@
     <!-- Окно -->
     <div id="H2" class="popup">
         <h2>Алфавит</h2>
-        <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
+        <p>
+            Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.
+        </p>
         <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно -->
     <div id="H3" class="popup">
         <h2>Длина строки</h2>
-        <p>Длину строки или массива элементов можно узнать при помощи команды len(&lt;массив или строка&gt;).</p>
+        <p>
+            Длину строки или массива элементов можно узнать при помощи команды len(&lt;массив или строка&gt;).
+        </p>
         <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно -->
     <div id="H4" class="popup">
         <h2>Код фрагмента</h2>
-        <p>ciphertext = "yfljvfwkyvizjzexjle"</p>
-        <p>ciphertext_index = [None] * len(ciphertext)</p>
-        <p>alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-            't', 'u', 'v', 'w', 'x', 'y', 'z']
-        </p>
-        <p>deciphered = [None] * len(ciphertext)</p>
+        <pre><code>
+ciphertext = "yfljvfwkyvizjzexjle"
+ciphertext_index = [None] * len(ciphertext)
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+deciphered = [None] * len(ciphertext)</code></pre>
         <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
     </div>
 

@@ -52,7 +52,8 @@
             порогов.
         </p>
         <p>
-            <b>Задание:</b> Какое значение выведет функция, если подать ей на вход строку «bear Middle adfnbgu HORSE HHEUVKZf»?
+            <b>Задание:</b> Какое значение выведет функция, если подать ей на вход строку «bear Middle adfnbgu HORSE
+            HHEUVKZf»?
         </p>
 
         <button id="openMenuButton" class="btn btn-primary"
@@ -84,120 +85,131 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
-</div>
-<!-- Окно меню подсказки -->
-<div id="menu" class="popup">
-    <h2>Выберите подсказку</h2>
 
-    <div style="display: flex; flex-direction: row">
-        <form action="/open_Level2_theory" method="get" class="mr-2">
-            <button type="submit" class="btn btn-primary">О шифре</button>
-        </form>
-        <button id="openMethodButton" class="btn btn-primary mr-2">Метод</button>
-        <button id="openKeyButton" class="btn btn-primary mr-2">Ключ</button>
-        <button id="openResultButton" class="btn btn-warning mr-2" style="display: none">Ответ</button>
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
 
-        <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Пороги по умолчанию</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Подсчет числа букв</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
     </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Пороги по умолчанию</h2>
+        <p>
+            Для задания значений порогов по умолчанию устанавливайте их при указании именованных аргументов функции.
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Методика реализации</h2>
+        <p>
+            Вывод значения True функцией должен выполняться только при преодолении порогов как по словам, так и по
+            буквам.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H3" class="popup">
+        <h2>Подсчет числа букв</h2>
+        <p>
+            Количество букв входной строки осуществляется без учета знаков препинания и прочих лишних символов –
+            используйте функцию, убирающую эти символы.
+        </p>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+def isEnglish(message, wordPercentage=20, letterPercentage=85):
+    wordsMatch = getEnglishCount(message) * 100 >= wordPercentage
+    numLetters = len(removeNonLetters(message))
+    messageLettersPercentage = float(numLetters) / len(message) * 100
+    lettersMatch = messageLettersPercentage >= letterPercentage
+    return wordsMatch and lettersMatch</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
+
+        openH3Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H3.style.display = 'block';
+        });
+
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
-
-<!-- Окно Метода подсказки -->
-<div id="method" class="popup">
-    <h2>Метод</h2>
-    <p>
-        Малое пространство ключей делает брут-форс самым эффективным и простым вариантом атаки на шифр Цезаря.
-        Брутфорс, или атака полным перебором, — это метод атаки с угадыванием паролей, учетных данных для входа в
-        систему, ключей шифрования и прочей информации. Это метод проб и ошибок, цель которого — перебрать все возможные
-        комбинации для получения правильного пароля.
-        Для вскрытия необходимо каждую букву шифртекста заменить буквой, стоящей на один знак левее в алфавите. Если в
-        результате этого не удалось получить читаемое сообщение, то необходимо повторить действие, но уже сместив буквы
-        на два знака левее. И так далее, пока в результате не получится читаемый текст.
-    </p>
-    <button id="closeMethodButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ключа подсказки -->
-<div id="key" class="popup">
-    <h2>Ключ</h2>
-    <p>Ключ: -12</p>
-    <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ответа подсказки -->
-<div id="result" class="popup">
-    <h2>Ответ</h2>
-    <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-    <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<script>
-    let resultCounter = 0;
-    const needForResult = 2;
-
-    const openMenuButton = document.getElementById('openMenuButton');
-    const menu = document.getElementById('menu');
-    const closeMenuButton = document.getElementById('closeMenuButton');
-
-    openMenuButton.addEventListener('click', function () {
-        result.style.display = 'none';
-        key.style.display = 'none';
-        method.style.display = 'none';
-        menu.style.display = 'block';
-    });
-
-    closeMenuButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-    });
-
-    const openMethodButton = document.getElementById('openMethodButton');
-    const method = document.getElementById('method');
-    const closeMethodButton = document.getElementById('closeMethodButton');
-
-    openMethodButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        method.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeMethodButton.addEventListener('click', function () {
-        method.style.display = 'none';
-    });
-
-    const openKeyButton = document.getElementById('openKeyButton');
-    const key = document.getElementById('key');
-    const closeKeyButton = document.getElementById('closeKeyButton');
-
-    openKeyButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        key.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeKeyButton.addEventListener('click', function () {
-        key.style.display = 'none';
-    });
-
-    const openResultButton = document.getElementById('openResultButton');
-    const result = document.getElementById('result');
-    const closeResultButton = document.getElementById('closeResultButton');
-
-    openResultButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        result.style.display = 'block';
-    });
-
-    closeResultButton.addEventListener('click', function () {
-        result.style.display = 'none';
-    });
-
-</script>
-
 <#include "../../footer.ftlh">
