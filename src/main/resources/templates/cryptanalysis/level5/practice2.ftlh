@@ -92,5 +92,113 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
+
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
+
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Операторы присваивания</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Методика реализации</h2>
+        <p>
+            Зависимость от выбранного режима реализовывается при помощи конструкции if / elif.
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Операторы присваивания</h2>
+        <p>
+            В Python есть специальные операторы присваивания, позволяющие сократить количество кода. Например, +=
+            прибавляет к переменной слева от себя значение справа, -= соответственно отнимает, *= умножает, //= берет
+            целую часть от деления, а %= – остаток.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+def translateMessage(key, message, mode):
+    translated = []
+    keyIndex = 0
+    key = key.upper()
+    for symbol in message:
+        num = LETTERS.find(symbol.upper())
+        if num != -1:
+            if mode == 'encrypt':
+                num += LETTERS.find(key[keyIndex])
+            elif mode == 'decrypt':
+                num -= LETTERS.find(key[keyIndex])
+            num %= len(LETTERS)</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
 <#include "../../footer.ftlh">

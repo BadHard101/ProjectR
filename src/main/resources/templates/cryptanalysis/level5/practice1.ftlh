@@ -65,6 +65,10 @@
             дальше.
         </p>
 
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
+
         <#if openPracLable??>
             <h2 style="color: #4B0082">${openPracLable}</h2>
         </#if>
@@ -73,5 +77,80 @@
             <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я прочитал!
             </button>
         </form>
+    </div>
+
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
+
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Методика реализации</h2>
+        <p>
+            Ввод значений переменных через консоль после запуска программы реализуется при помощи функции input().
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+myMessage = input('Исходное сообщение &gt; ')
+myKey = input('Ключ-слово &gt; ')
+myMode = input('Режим перевода (encrypt/decrypt) &gt; ')</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
 <#include "../../footer.ftlh">
