@@ -109,41 +109,41 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openEmptyMassiveButton" class="btn btn-primary mr-2">Пустые массивы</button>
-            <button id="openAlphabetButton" class="btn btn-primary mr-2">Алфавит</button>
-            <button id="openStringLengthButton" class="btn btn-primary mr-2">Длина строки</button>
-            <button id="openCodeFragmentButton" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2">Пустые массивы</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Алфавит</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Длина строки</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
 
             <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
         </div>
     </div>
 
     <!-- Окно -->
-    <div id="emptyMassive" class="popup">
+    <div id="H1" class="popup">
         <h2>Пустые массивы</h2>
         <p>
             Для создания пустых массивов фиксированной длины используйте конструкцию
             вида &lt;имя пустого массива&gt; = [None] * &lt;длина пустого массива&gt;.
         </p>
-        <button id="closeEmptyMassiveButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно -->
-    <div id="alphabet" class="popup">
+    <div id="H2" class="popup">
         <h2>Алфавит</h2>
         <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
-        <button id="closeAlphabetButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно -->
-    <div id="stringLength" class="popup">
+    <div id="H3" class="popup">
         <h2>Длина строки</h2>
         <p>Длину строки или массива элементов можно узнать при помощи команды len(&lt;массив или строка&gt;).</p>
-        <button id="closeStringLengthButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <!-- Окно -->
-    <div id="codeFragment" class="popup">
+    <div id="H4" class="popup">
         <h2>Код фрагмента</h2>
         <p>ciphertext = "yfljvfwkyvizjzexjle"</p>
         <p>ciphertext_index = [None] * len(ciphertext)</p>
@@ -151,7 +151,7 @@
             't', 'u', 'v', 'w', 'x', 'y', 'z']
         </p>
         <p>deciphered = [None] * len(ciphertext)</p>
-        <button id="closeCodeFragmentButton" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
     </div>
 
     <script>
@@ -160,10 +160,10 @@
         const closeMenuButton = document.getElementById('closeMenuButton');
 
         openMenuButton.addEventListener('click', function () {
-            emptyMassive.style.display = 'none';
-            alphabet.style.display = 'none';
-            stringLength.style.display = 'none';
-            codeFragment.style.display = 'none';
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
             menu.style.display = 'block';
         });
 
@@ -171,56 +171,56 @@
             menu.style.display = 'none';
         });
 
-        const openEmptyMassiveButton = document.getElementById('openEmptyMassiveButton');
-        const emptyMassive = document.getElementById('emptyMassive');
-        const closeEmptyMassiveButton = document.getElementById('closeEmptyMassiveButton');
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
 
-        openEmptyMassiveButton.addEventListener('click', function () {
+        openH1Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            emptyMassive.style.display = 'block';
+            H1.style.display = 'block';
         });
 
-        closeEmptyMassiveButton.addEventListener('click', function () {
-            emptyMassive.style.display = 'none';
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
         });
 
-        const openAlphabetButton = document.getElementById('openAlphabetButton');
-        const alphabet = document.getElementById('alphabet');
-        const closeAlphabetButton = document.getElementById('closeAlphabetButton');
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
 
-        openAlphabetButton.addEventListener('click', function () {
+        openH2Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            alphabet.style.display = 'block';
+            H2.style.display = 'block';
         });
 
-        closeAlphabetButton.addEventListener('click', function () {
-            alphabet.style.display = 'none';
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
         });
 
-        const openStringLengthButton = document.getElementById('openStringLengthButton');
-        const stringLength = document.getElementById('stringLength');
-        const closeStringLengthButton = document.getElementById('closeStringLengthButton');
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
 
-        openStringLengthButton.addEventListener('click', function () {
+        openH3Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            stringLength.style.display = 'block';
+            H3.style.display = 'block';
         });
 
-        closeStringLengthButton.addEventListener('click', function () {
-            stringLength.style.display = 'none';
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
         });
 
-        const openCodeFragmentButton = document.getElementById('openCodeFragmentButton');
-        const codeFragment = document.getElementById('codeFragment');
-        const closeCodeFragmentButton = document.getElementById('closeCodeFragmentButton');
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
 
-        openCodeFragmentButton.addEventListener('click', function () {
+        openH4Button.addEventListener('click', function () {
             menu.style.display = 'none';
-            codeFragment.style.display = 'block';
+            H4.style.display = 'block';
         });
 
-        closeCodeFragmentButton.addEventListener('click', function () {
-            codeFragment.style.display = 'none';
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
         });
     </script>
 </div>
