@@ -16,6 +16,8 @@
         backdrop-filter: blur(6px); /* Эффект размытия фона */
         word-break: normal;
         max-width: 100vw;
+        max-height: 100vh;
+        overflow: auto;
     }
 
     .popup > p {

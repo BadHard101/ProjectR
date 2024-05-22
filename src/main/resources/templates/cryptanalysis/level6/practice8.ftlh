@@ -58,6 +58,10 @@
             новый рейтинг биграмм заносится в резервную переменную, шаг соседства устанавливается на единицу.
         </p>
 
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
+
         <#if openPracLable??>
             <h2 style="color: #4B0082">${openPracLable}</h2>
         </#if>
@@ -70,6 +74,64 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
+
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
+
+        <div style="display: flex; flex-direction: row">
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+bigrammsRating = 0
+            for k, v in bigramms.items():
+                bigrammsRating += (bigramms[k] - bigrammsFreqsStandart[k]) ** 2
+            if bigrammsRating &lt; prevBigrammsRating:
+                findGoodBigrammFlag = True
+                prevBigrammsRating = bigrammsRating
+                step = 1
+                break
+            else:
+                key[i], key[i + step] = key[i + step], key[i]
+                for k, v in copyBigrammsFreq.items():
+                    bigramms[k] = v</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
 
 <#include "../../footer.ftlh">
