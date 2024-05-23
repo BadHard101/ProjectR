@@ -79,12 +79,12 @@
                          alt="Картинка" style="width: 100px; float: center;">
                 </div>
 
-                <#if user.cryptoProgress gt 15><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
+                <#if user.cryptoProgress gt 14><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
                     <img src="https://i.ibb.co/yyBTTR1/2.png"
                          alt="Картинка" style="width: 100px; float: center;">
                 </div></#if>
 
-                <#if user.cryptoProgress gt 26><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
+                <#if user.cryptoProgress gt 25><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
                     <img src="https://i.ibb.co/yyBTTR1/2.png"
                          alt="Картинка" style="width: 100px; float: center;">
                 </div></#if>
