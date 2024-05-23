@@ -126,12 +126,12 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Деление нацело</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Деление нацело</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -141,7 +141,7 @@
         <p>
             Деление одного числа на другое нацело в Python выполняется при помощи «//».
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -154,7 +154,7 @@ while v3 != 0:
     q = u3 // v3
     v1, v2, v3, u1, u2, u3 = (u1 - q * v1), (u2 - q * v2), (u3 - q * v3), v1, v2, v3
 return u1 % m</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

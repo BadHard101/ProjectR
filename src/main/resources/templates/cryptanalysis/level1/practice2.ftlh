@@ -95,13 +95,13 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Индексы символов</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Индексы символов</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -112,13 +112,13 @@
             сравнивая и
             ища совпадения среди букв.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <div id="H2" class="popup">
         <h2>Индексы символов</h2>
         <p>Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.</p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <div id="H3" class="popup">
@@ -128,7 +128,7 @@ for i in range(len(ciphertext)):
     for j in range(len(alphabet)):
         if ciphertext[i] == alphabet[j]:
             ciphertext_index[i] = j</p></pre>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

@@ -96,14 +96,14 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Перевод регистров</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Обозначения спец. символов</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Перевод регистров</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Обозначения спец. символов</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -113,7 +113,7 @@
         <p>
             Используйте словарь для эффективного поиска, читайте файл построчно, разделяя на слова.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -122,7 +122,7 @@
         <p>
             Перевод букв в верхний и нижний регистр осуществляется командами .lower() и .upper(), соответственно.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -131,7 +131,7 @@
         <p>
             Символ переноса строки обозначается как “\n”, а знак табуляции – как “\t”.
         </p>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -148,7 +148,7 @@ def loadDictionary():
     dictionaryFile.close()
     return englishWords
 ENGLISH_WORDS = loadDictionary()</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

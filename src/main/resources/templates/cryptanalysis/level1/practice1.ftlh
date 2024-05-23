@@ -116,14 +116,14 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Пустые массивы</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Алфавит</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Длина строки</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Пустые массивы</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Алфавит</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Длина строки</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -132,9 +132,13 @@
         <h2>Пустые массивы</h2>
         <p>
             Для создания пустых массивов фиксированной длины используйте конструкцию
-            вида &lt;имя пустого массива&gt; = [None] * &lt;длина пустого массива&gt;.
+            вида
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <p>
+            &lt;имя пустого массива&gt; = [None] * &lt;длина пустого массива&gt;
+        </p>
+        <br>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -143,7 +147,7 @@
         <p>
             Алфавит может быть задан как в виде массива отдельных символов, так и единой строкой.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -152,7 +156,7 @@
         <p>
             Длину строки или массива элементов можно узнать при помощи команды len(&lt;массив или строка&gt;).
         </p>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -163,7 +167,7 @@ ciphertext = "yfljvfwkyvizjzexjle"
 ciphertext_index = [None] * len(ciphertext)
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 deciphered = [None] * len(ciphertext)</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

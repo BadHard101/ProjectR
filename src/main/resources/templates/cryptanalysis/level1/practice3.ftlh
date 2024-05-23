@@ -111,14 +111,14 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Перебор вариантов</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Перенос из конца в начало алфавита</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Массив в строку</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Перебор вариантов</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Перенос из конца в начало алфавита</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Массив в строку</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -128,7 +128,7 @@
         <p>
             Нет смысла проверять исходный вариант шифротекста (с ключом, равным размеру алфавита).
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -138,17 +138,19 @@
             Сдвиг символов из конца алфавита вправо переносит их в начало – для реализации этого используйте оператор
             «%», возвращающий остаток от деления одного числа на другое, для определения нового индекса символа.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
     <div id="H3" class="popup">
         <h2>Массив в строку</h2>
         <p>
-            Для того, чтобы объединить массив отдельных символов в единую строку используйте конструкцию ‘’.join(
-            &lt;переменная-массив&gt;).
+            Для того, чтобы объединить массив отдельных символов в единую строку используйте конструкцию
         </p>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <p>
+            ‘’.join(&lt;переменная-массив&gt;)
+        </p>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -160,7 +162,7 @@ for i in range(len(alphabet) - 1):
         deciphered[j] = alphabet[(ciphertext_index[j] + i + 1)
             % len(alphabet)]
     print(''.join(deciphered), '\n')</pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

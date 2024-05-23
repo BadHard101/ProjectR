@@ -97,14 +97,14 @@
     <!-- Окно меню подсказки -->
     <div id="menu" class="popup">
         <h2>Выберите подсказку</h2>
-
+<br>
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Проверка слов</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Массив в строку</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Проверка слов</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Массив в строку</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -114,7 +114,7 @@
         <p>
             Используйте цикл по символам строки и проверку наличия в константе с буквами и пробельными символами.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -123,16 +123,19 @@
         <p>
             Для проверки наличия слов в словаре сначала переводите проверяемое слово в верхний регистр.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
     <div id="H3" class="popup">
         <h2>Массив в строку</h2>
         <p>
-            Для того, чтобы объединить массив отдельных символов в единую строку используйте конструкцию ‘’.join(&lt;переменная-массив&gt;).
+            Для того, чтобы объединить массив отдельных символов в единую строку используйте конструкцию
         </p>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <p>
+            ‘’.join(&lt;переменная-массив&gt;)
+        </p>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -156,7 +159,7 @@ def removeNonLetters(message):
         if symbol in LETTERS_AND_SPACE:
             lettersOnly.append(symbol)
     return ''.join(lettersOnly)</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>
