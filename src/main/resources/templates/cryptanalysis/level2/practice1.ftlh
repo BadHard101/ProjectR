@@ -7,23 +7,33 @@
     .popup {
         display: none;
         position: fixed;
-        top: 50%;
-        left: 50%;
+        top: 50vh; /* 50% of the viewport height */
+        left: 50vw; /* 50% of the viewport width */
         transform: translate(-50%, -50%);
         background-color: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
         border-radius: 10px; /* Закругленные углы */
-        padding: 20px;
+        padding: 2%; /* 2% of the .popup element's width */
         z-index: 1000;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
         backdrop-filter: blur(6px); /* Эффект размытия фона */
+        word-break: normal;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow: auto;
     }
+
+    .popup > p {
+        word-break: break-word;
+    }
+
     .overlay {
         position: relative;
         display: inline-block;
-        border-radius: 10px;
-        padding: 1% 3%;
-        margin-top: 1%;
+        border-radius: 1vw; /* 1% of the viewport width */
+        padding: 0 3%;
+        margin-top: 2%;
         margin-bottom: 2%;
+        word-break: break-word;
     }
 
     .overlay::after {
@@ -35,45 +45,33 @@
         height: 100%;
         background-color: rgba(176, 200, 253, 0.5); /* Белый цвет с прозрачностью 50% */
         z-index: -1;
-        border-radius: 15px; /* Задает округлые границы */
-        filter: blur(10px); /* Задает размытие границ */
+        border-radius: 1.5vw; /* 1.5% of the viewport width */
+        filter: blur(1vw); /* 1% of the viewport width */
     }
 </style>
 <div class="overlay">
     <div class="mt-4">
-        <h3>Практика. Этап I: Создание необходимых для работы элементов</h3>
-        <p></p>
+        <h3>Практика. Этап I: Подготовка констант и загрузка словаря</h3>
+        <br>
         <p>
-            Во время работы по взлому данного шифра будет необходимо периодически пробовать дешифровать шифротекст при
-            помощи получаемого ключа. В связи с этим, Вам нужно создать отдельную функцию, преобразующую шифротекст схожим
-            образом с тем, как уровнем ранее Вы сдвигали буквы в алфавите на фиксированное число шагов (только теперь одни
-            буквы произвольно сменяются другими). На вход данная функция должна принимать:
+            В первую очередь необходимо задать константный набор букв английского алфавита (в нижнем и верхнем
+            регистрах), а также символами перевода строки, знаками табуляции и пробелами. Далее создайте функцию для
+            загрузки файла словаря английских слов и формирования на его основе структуры данных со словами – это будет
+            фундаментом для дальнейшей работы программы.
         </p>
         <p>
-            Для того, чтобы выполнить дешифрование текста, зашифрованного шифром Цезаря, Вам понадобятся следующие элементы:
-        </p>
-        <ul>
-            <li>
-                шифротекст – текстовую строку произвольной длины;
-            </li>
-            <li>
-                ключ – массив символов алфавита.
-            </li>
-        </ul>
-
-        <p>
-            <b>Задание:</b> Подайте на вход созданной Вами функции дешифрования шифротекст «abcddbaccabd» и ключ [‘b’, ‘c’,
-            ‘d’, ‘a’]. В ответе напишите получившийся результат.
+            <b>Задание:</b> Укажите точное количество всех слов, приведенных в файле-словаре.
         </p>
 
-        <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
 
         <form action="/check_Level2_practice1" method="post" class="mt-4">
             <div class="form-group">
                 <label for="question1">Ответ:</label>
                 <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);"
-                       type="text" id="question1" name="answer1"
-                       class="form-control"
+                       type="text" id="question1" name="answer1" class="form-control"
                        <#if answers??>value="${answers.getAnswer1()}"</#if>>
                 <#if result??>
                     <#if result[0]>
@@ -85,127 +83,142 @@
             </div>
 
             <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Проверить</button>
+            <button type="submit" class="btn btn-primary"
+                    style="margin-bottom:15px; background-color: #4B0082; border: #4B0082;">Проверить
+            </button>
         </form>
 
         <#if errorMessage??>
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
     </div>
-</div>
-<!-- Окно меню подсказки -->
-<div id="menu" class="popup">
-    <h2>Выберите подсказку</h2>
 
-    <div style="display: flex; flex-direction: row">
-        <form action="/open_Level1_theory" method="get" class="mr-2">
-            <button type="submit" class="btn btn-primary">О шифре</button>
-        </form>
-        <button id="openMethodButton" class="btn btn-primary mr-2">Метод</button>
-        <button id="openKeyButton" class="btn btn-primary mr-2">Ключ</button>
-        <button id="openResultButton" class="btn btn-warning mr-2" style="display: none">Ответ</button>
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
 
-        <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        <div style="display: flex; flex-direction: row">
+            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2">Перевод регистров</button>
+            <button id="openH3Button" class="btn btn-primary mr-2">Обозначения спец. символов</button>
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
     </div>
+
+    <!-- Окно -->
+    <div id="H1" class="popup">
+        <h2>Методика реализации</h2>
+        <p>
+            Используйте словарь для эффективного поиска, читайте файл построчно, разделяя на слова.
+        </p>
+        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H2" class="popup">
+        <h2>Перевод регистров</h2>
+        <p>
+            Перевод букв в верхний и нижний регистр осуществляется командами .lower() и .upper(), соответственно.
+        </p>
+        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H3" class="popup">
+        <h2>Обозначения спец. символов</h2>
+        <p>
+            Символ переноса строки обозначается как “\n”, а знак табуляции – как “\t”.
+        </p>
+        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+UPPERLETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LETTERS_AND_SPACE = UPPERLETTERS + UPPERLETTERS.lower() + ' \t\n'
+def loadDictionary():
+    dictionaryFile = open('dictionary.txt')
+    englishWords = {}
+    for word in dictionaryFile.read().split('\n'):
+        englishWords[word] = None
+    dictionaryFile.close()
+    return englishWords
+ENGLISH_WORDS = loadDictionary()</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H1.style.display = 'none';
+            H2.style.display = 'none';
+            H3.style.display = 'none';
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH1Button = document.getElementById('openH1Button');
+        const H1 = document.getElementById('H1');
+        const closeH1Button = document.getElementById('closeH1Button');
+
+        openH1Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H1.style.display = 'block';
+        });
+
+        closeH1Button.addEventListener('click', function () {
+            H1.style.display = 'none';
+        });
+
+        const openH2Button = document.getElementById('openH2Button');
+        const H2 = document.getElementById('H2');
+        const closeH2Button = document.getElementById('closeH2Button');
+
+        openH2Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H2.style.display = 'block';
+        });
+
+        closeH2Button.addEventListener('click', function () {
+            H2.style.display = 'none';
+        });
+
+        const openH3Button = document.getElementById('openH3Button');
+        const H3 = document.getElementById('H3');
+        const closeH3Button = document.getElementById('closeH3Button');
+
+        openH3Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H3.style.display = 'block';
+        });
+
+        closeH3Button.addEventListener('click', function () {
+            H3.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
 </div>
-
-<!-- Окно Метода подсказки -->
-<div id="method" class="popup">
-    <h2>Метод</h2>
-    <p>
-        Малое пространство ключей делает брут-форс самым эффективным и простым вариантом атаки на шифр Цезаря.
-        Брутфорс, или атака полным перебором, — это метод атаки с угадыванием паролей, учетных данных для входа в
-        систему, ключей шифрования и прочей информации. Это метод проб и ошибок, цель которого — перебрать все возможные
-        комбинации для получения правильного пароля.
-        Для вскрытия необходимо каждую букву шифртекста заменить буквой, стоящей на один знак левее в алфавите. Если в
-        результате этого не удалось получить читаемое сообщение, то необходимо повторить действие, но уже сместив буквы
-        на два знака левее. И так далее, пока в результате не получится читаемый текст.
-    </p>
-    <button id="closeMethodButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ключа подсказки -->
-<div id="key" class="popup">
-    <h2>Ключ</h2>
-    <p>Ключ: -12</p>
-    <button id="closeKeyButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<!-- Окно Ответа подсказки -->
-<div id="result" class="popup">
-    <h2>Ответ</h2>
-    <p>ПЕРВОГО ЧИСЛА МАРТА НА ЗАКАТЕ ИТАЛИЯ ПЛАНИРУЕТ ЗАХВАТ ОСТРОВА КЕРКИРА</p>
-    <button id="closeResultButton" class="btn btn-danger">Закрыть</button>
-</div>
-
-<script>
-    let resultCounter = 0;
-    const needForResult = 2;
-
-    const openMenuButton = document.getElementById('openMenuButton');
-    const menu = document.getElementById('menu');
-    const closeMenuButton = document.getElementById('closeMenuButton');
-
-    openMenuButton.addEventListener('click', function () {
-        result.style.display = 'none';
-        key.style.display = 'none';
-        method.style.display = 'none';
-        menu.style.display = 'block';
-    });
-
-    closeMenuButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-    });
-
-    const openMethodButton = document.getElementById('openMethodButton');
-    const method = document.getElementById('method');
-    const closeMethodButton = document.getElementById('closeMethodButton');
-
-    openMethodButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        method.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeMethodButton.addEventListener('click', function () {
-        method.style.display = 'none';
-    });
-
-    const openKeyButton = document.getElementById('openKeyButton');
-    const key = document.getElementById('key');
-    const closeKeyButton = document.getElementById('closeKeyButton');
-
-    openKeyButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        key.style.display = 'block';
-
-        resultCounter = resultCounter + 1;
-        if (resultCounter === needForResult) {
-            openResultButton.style.display = 'block';
-        }
-    });
-
-    closeKeyButton.addEventListener('click', function () {
-        key.style.display = 'none';
-    });
-
-    const openResultButton = document.getElementById('openResultButton');
-    const result = document.getElementById('result');
-    const closeResultButton = document.getElementById('closeResultButton');
-
-    openResultButton.addEventListener('click', function () {
-        menu.style.display = 'none';
-        result.style.display = 'block';
-    });
-
-    closeResultButton.addEventListener('click', function () {
-        result.style.display = 'none';
-    });
-
-</script>
-
 <#include "../../footer.ftlh">

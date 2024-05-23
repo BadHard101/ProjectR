@@ -1,8 +1,8 @@
-package com.example.rschir_buysell.controllers.Cryptanalysis.Level1;
+package com.example.rschir_buysell.controllers.Cryptanalysis;
 
 import com.example.rschir_buysell.models.Answers;
 import com.example.rschir_buysell.models.User;
-import com.example.rschir_buysell.services.Cryptanalysis.Level1.UserCryptanalysisLevel1Service;
+import com.example.rschir_buysell.services.Cryptanalysis.UserCryptanalysisLevel1Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * Level 1
+ * Level1
  */
 @Controller
 @RequiredArgsConstructor
@@ -32,7 +32,7 @@ public class UserCryptanalysisLevel1Controller {
     @PostMapping("/check_Level1_theory")
     public String check_Level1_theory(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        model.addAttribute("openPracLable", "Теперь вам доступно практические задание!");
+        model.addAttribute("openPracLable", "Отлично, теперь вам доступно практическое задание!");
         userCryptanalysisLevel1Service.check_Level1_theory(answers, user);
         return "cryptanalysis/level1/theory";
     }

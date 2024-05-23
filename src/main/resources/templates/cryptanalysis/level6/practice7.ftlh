@@ -1,0 +1,133 @@
+<#include "../../header.ftlh">
+
+<#include "panel.ftlh">
+
+<style>
+    /* Стили для всплывающего окна */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50vh; /* 50% of the viewport height */
+        left: 50vw; /* 50% of the viewport width */
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
+        border-radius: 10px; /* Закругленные углы */
+        padding: 2%; /* 2% of the .popup element's width */
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
+        backdrop-filter: blur(6px); /* Эффект размытия фона */
+        word-break: normal;
+        max-width: 100vw;
+    }
+
+    .popup > p {
+        word-break: break-word;
+    }
+
+    .overlay {
+        position: relative;
+        display: inline-block;
+        border-radius: 1vw; /* 1% of the viewport width */
+        padding: 0 3%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        word-break: break-word;
+    }
+
+    .overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(176, 200, 253, 0.5); /* Белый цвет с прозрачностью 50% */
+        z-index: -1;
+        border-radius: 1.5vw; /* 1.5% of the viewport width */
+        filter: blur(1vw); /* 1% of the viewport width */
+    }
+</style>
+<div class="overlay">
+    <div class="mt-4">
+        <h3>Практика. Этап VII: Изменение частот биграмм после перестановки букв</h3>
+        <p></p>
+        <p>
+            После того, как буквы i и (i+1) ключа переставлены, нужно изменить частоты биграмм, в которых они
+            присутствуют.
+            Например, если в ключе поменялись местами буквы «a» и «b», но меняются местами также и частоты: f(ax) ->
+            f(bx),
+            f(bx) -> f(ax), f(xa) -> f(xb), f(xb) -> f(xa), f(aa) -> f(bb), f(bb) -> f(aa).
+        </p>
+
+        <button id="openMenuButton" class="btn btn-primary"
+                style="background-color: #92256E; border: #92256E; color: #fff;">Подсказка
+        </button>
+
+        <#if openPracLable??>
+            <h2 style="color: #4B0082">${openPracLable}</h2>
+        </#if>
+        <form action="/check_Level6_practice7" method="post" class="mt-4 mb-4">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я понял!
+            </button>
+        </form>
+
+        <#if errorMessage??>
+            <h2 style="color: red">${errorMessage}</h2>
+        </#if>
+    </div>
+
+    <!-- Окно меню подсказки -->
+    <div id="menu" class="popup">
+        <h2>Выберите подсказку</h2>
+
+        <div style="display: flex; flex-direction: row">
+            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+
+            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Окно -->
+    <div id="H4" class="popup">
+        <h2>Код фрагмента</h2>
+        <pre><code>
+for sym in alphabet:
+                if sym == alphabet[i] or sym == alphabet[i + step]:
+                    continue
+                bigramms[sym + alphabet[i]], bigramms[sym + alphabet[i + step]] = bigramms[sym + alphabet[i + step]], bigramms[sym + alphabet[i]]
+                bigramms[alphabet[i] + sym], bigramms[alphabet[i + step] + sym] = bigramms[alphabet[i + step] + sym], bigramms[alphabet[i] + sym]
+            bigramms[alphabet[i] + alphabet[i + step]], bigramms[alphabet[i + step] + alphabet[i]] = bigramms[alphabet[i + step] + alphabet[i]], bigramms[alphabet[i] + alphabet[i + step]]
+            bigramms[alphabet[i] + alphabet[i]], bigramms[alphabet[i + step] + alphabet[i + step]] = bigramms[alphabet[i + step] + alphabet[i + step]], bigramms[alphabet[i] + alphabet[i]]</code></pre>
+        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+    </div>
+
+    <script>
+        const openMenuButton = document.getElementById('openMenuButton');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        openMenuButton.addEventListener('click', function () {
+            H4.style.display = 'none';
+            menu.style.display = 'block';
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+
+        const openH4Button = document.getElementById('openH4Button');
+        const H4 = document.getElementById('H4');
+        const closeH4Button = document.getElementById('closeH4Button');
+
+        openH4Button.addEventListener('click', function () {
+            menu.style.display = 'none';
+            H4.style.display = 'block';
+        });
+
+        closeH4Button.addEventListener('click', function () {
+            H4.style.display = 'none';
+        });
+    </script>
+</div>
+<#include "../../footer.ftlh">

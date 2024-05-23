@@ -1,12 +1,34 @@
 <#include "../header.ftlh">
 <style>
+    /* Стили для всплывающего окна */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50vh; /* 50% of the viewport height */
+        left: 50vw; /* 50% of the viewport width */
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
+        border-radius: 10px; /* Закругленные углы */
+        padding: 2%; /* 2% of the .popup element's width */
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
+        backdrop-filter: blur(6px); /* Эффект размытия фона */
+        word-break: normal;
+        max-width: 100vw;
+    }
+
+    .popup > p {
+        word-break: break-word;
+    }
+
     .overlay {
         position: relative;
         display: inline-block;
-        border-radius: 10px;
-        padding: 3% 3%;
+        border-radius: 1vw; /* 1% of the viewport width */
+        padding: 0 3%;
         margin-top: 2%;
         margin-bottom: 2%;
+        word-break: break-word;
     }
 
     .overlay::after {
@@ -18,8 +40,8 @@
         height: 100%;
         background-color: rgba(176, 200, 253, 0.5); /* Белый цвет с прозрачностью 50% */
         z-index: -1;
-        border-radius: 15px; /* Задает округлые границы */
-        filter: blur(10px); /* Задает размытие границ */
+        border-radius: 1.5vw; /* 1.5% of the viewport width */
+        filter: blur(1vw); /* 1% of the viewport width */
     }
 </style>
 <div class="">
@@ -108,7 +130,7 @@
                     <form action="/open_Level3_theory" method="get">
                         <button type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
-                                <#if user.cryptoProgress lt 17>disabled</#if>
+                                <#if user.cryptoProgress lt 10>disabled</#if>
 
                                 style="
                                         height: 150px;
@@ -118,11 +140,11 @@
                                         cursor: pointer;
                                         /*ready*/
                                         background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
-                                <#if user.cryptoProgress lt 17>
+                                <#if user.cryptoProgress lt 10>
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.cryptoProgress gt 18>
+                                <#if user.cryptoProgress gt 14>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if> ">
@@ -134,7 +156,7 @@
                     <form action="/open_Level4_theory" method="get">
                         <button type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
-                                <#if user.cryptoProgress lt 19>disabled</#if>
+                                <#if user.cryptoProgress lt 15>disabled</#if>
                                 style="
                                         height: 150px;
                                         width: 150px;
@@ -143,7 +165,7 @@
                                         cursor: pointer;
                                         /*ready*/
                                         background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
-                                <#if user.cryptoProgress lt 19>
+                                <#if user.cryptoProgress lt 15>
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
@@ -160,7 +182,7 @@
                         <button
                                 type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
-                                <#if user.cryptoProgress lt 20>disabled</#if>
+                                <#if user.cryptoProgress lt 21>disabled</#if>
                                 style="
                                         height: 150px;
                                         width: 150px;
@@ -169,11 +191,11 @@
                                         cursor: pointer;
                                         /*ready*/
                                         background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
-                                <#if user.cryptoProgress lt 20>
+                                <#if user.cryptoProgress lt 21>
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.cryptoProgress gt 24>
+                                <#if user.cryptoProgress gt 25>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if>">
@@ -186,7 +208,7 @@
                     <form action="/open_Level6_theory" method="get">
                         <button type="submit"
                                 class="btn btn-primary btn-lg btn-circle"
-                                <#if user.cryptoProgress lt 25>disabled</#if>
+                                <#if user.cryptoProgress lt 26>disabled</#if>
                                 style="
                                         height: 150px;
                                         width: 150px;
@@ -195,11 +217,11 @@
                                         cursor: pointer;
                                         /*ready*/
                                         background: url('https://i.ibb.co/hf6ctDX/bluePaw.png') no-repeat;
-                                <#if user.cryptoProgress lt 25>
+                                <#if user.cryptoProgress lt 26>
                                 <#--disabled-->
                                         background: url('https://i.ibb.co/p385h2L/greyPaw.png') no-repeat;
                                 </#if>
-                                <#if user.cryptoProgress gt 27>
+                                <#if user.cryptoProgress gt 37>
                                 <#--complete-->
                                         background: url('https://i.ibb.co/R9gYBr6/purple-Paw.png') no-repeat;
                                 </#if>">

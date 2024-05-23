@@ -1,4 +1,4 @@
-package com.example.rschir_buysell.services.Cryptanalysis.Level1;
+package com.example.rschir_buysell.services.Cryptanalysis;
 
 import com.example.rschir_buysell.models.Answers;
 import com.example.rschir_buysell.models.User;
@@ -18,7 +18,7 @@ public class UserCryptanalysisLevel1Service {
      */
     public void check_Level1_theory(Answers answers, User user) { // CHANGE
         if (user.getCryptoProgress() <= 0) { // CHANGE
-            user.setCryptoProgress(user.getCryptoProgress()+1);
+            user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
     }
@@ -32,7 +32,7 @@ public class UserCryptanalysisLevel1Service {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 1) { // CHANGE
-                user.setCryptoProgress(user.getCryptoProgress()+1);
+                user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
             userRepository.save(user);
@@ -49,7 +49,7 @@ public class UserCryptanalysisLevel1Service {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 2) { // CHANGE
-                user.setCryptoProgress(user.getCryptoProgress()+1);
+                user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
             userRepository.save(user);
@@ -66,7 +66,7 @@ public class UserCryptanalysisLevel1Service {
             result[0] = true;
 
             if (user.getCryptoProgress() <= 3) { // CHANGE
-                user.setCryptoProgress(user.getCryptoProgress()+1);
+                user.setCryptoProgress(user.getCryptoProgress() + 1);
                 userRepository.save(user);
             }
             userRepository.save(user);
@@ -81,14 +81,14 @@ public class UserCryptanalysisLevel1Service {
         boolean[] result = {false, false, false};
         if (answers.getAnswer1().equals("23"))
             result[0] = true;
-            if (answers.getAnswer2().equals("mwiixviiwsjkviirvihvswiwxss"))
+        if (answers.getAnswer2().equals("mwiixviiwsjkviirvihvswiwxss"))
             result[1] = true;
         if (answers.getAnswer3().equals("0,12"))
             result[2] = true;
 
         if (result[0] && result[1] && result[2]
                 && user.getCryptoProgress() <= 4) { // CHANGE
-            user.setCryptoProgress(user.getCryptoProgress()+1);
+            user.setCryptoProgress(user.getCryptoProgress() + 1);
             userRepository.save(user);
         }
         return result;
