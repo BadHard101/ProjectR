@@ -113,7 +113,8 @@
             <div class="form-group">
                 <label for="question1">Какие методы сокрытия информации в
                     видео используют младшие разряды цифровых отсчётов цифрового изображения и звука?</label>
-                <input type="text" id="question1" name="answer1" class="form-control"
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);
+                        type="text" id="question1" name="answer1" class="form-control"
                        <#if answers??>value="${answers.getAnswer1()}"</#if>>
                 <#if result??>
                     <#if result[0]>
@@ -126,7 +127,8 @@
 
             <div class="form-group">
                 <label for="question2">В чём уязвимость мультимедийных форматов с полями расширения?</label>
-                <input type="text" id="question2" name="answer2" class="form-control"
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);
+                        type="text" id="question2" name="answer2" class="form-control"
                        <#if answers??>value="${answers.getAnswer2()}"</#if>>
                 <#if result??>
                     <#if result[1]>
@@ -139,7 +141,8 @@
 
             <div class="form-group">
                 <label for="question3">Какой пример неиспользуемого места в дисках использовался в тексте?</label>
-                <input type="text" id="question3" name="answer3" class="form-control"
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);
+                        type="text" id="question3" name="answer3" class="form-control"
                        <#if answers??>value="${answers.getAnswer3()}"</#if>>
                 <#if result??>
                     <#if result[2]>
@@ -152,7 +155,8 @@
 
             <div class="form-group">
                 <label for="question4">В чем преимущество методов, основанных на на использовании специальных свойств компьютерных форматов?</label>
-                <input type="text" id="question4" name="answer4" class="form-control"
+                <input style="color: whitesmoke; background-color: rgba(84,91,175,0.5); border:rgba(84,91,175,0.5);
+                        type="text" id="question4" name="answer4" class="form-control"
                        <#if answers??>value="${answers.getAnswer4()}"</#if>>
                 <#if result??>
                     <#if result[3]>
