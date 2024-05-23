@@ -102,9 +102,9 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Индекс символа в алфавите</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Сдвиг символа</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Индекс символа в алфавите</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Сдвиг символа</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
             <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
         </div>
@@ -116,7 +116,7 @@
         <p>
             Для возврата индекса определенного символа в строке-алфавите используйте функцию &lt;алфавит&gt;.find(&lt;символ&gt;).
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger"style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -126,7 +126,7 @@
             Сдвиг зашифрованного символа при заданной паре (a, b) осуществляется как &lt;алфавит&gt;[(&lt;индекс символа&gt;
             - b) * a-1 mod len(&lt;алфавит&gt;)].
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -144,7 +144,7 @@ def decryptMessage(key, message):
         else:
             plaintext += symbol
     return plaintext</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

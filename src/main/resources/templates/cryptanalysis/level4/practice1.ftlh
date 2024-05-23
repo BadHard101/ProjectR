@@ -104,11 +104,11 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Подключение модулей</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Методика реализации</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Подключение модулей</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Методика реализации</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -119,7 +119,7 @@
             Для подключения написанных Вами модулей, перенесите файлы этих модулей в одну папку с текущей программой и
             присоедините их командой import.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -128,7 +128,7 @@
         <p>
             Для удобства ввода большой строки можно использовать запись вида """&lt;строка&gt;""".
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -139,7 +139,7 @@ import &lt;модуль с функциями поиска НОД и обрат�
 
 SYMBOLS = """ !"#$%&'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] ^_`abcdefghijklmnopqrstuvwxyz{|}~"""
 myMessage = """U&'&lt;3dJ^Gjx'-3^MS'Sj0jxuj'G3'%j'&lt;mMMjS'g{GjMMg9j{G'g"'gG '&lt;3^MS'Sj&lt;jguj'm'P^dm{'g{G3'%jMgjug{9'GPmG'gG'-m0'P^dm{LU'5&Mm{'_^xg{9"""</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

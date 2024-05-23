@@ -97,9 +97,9 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -111,7 +111,7 @@ def getKeyParts(key):
     keyA = key // len(SYMBOLS)
     keyB = key % len(SYMBOLS)
     return (keyA, keyB)</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>

@@ -100,11 +100,11 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Методика реализации</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Операторы присваивания</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Методика реализации</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Операторы присваивания</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -114,7 +114,7 @@
         <p>
             Зависимость от выбранного режима реализовывается при помощи конструкции if / elif.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -125,7 +125,7 @@
             прибавляет к переменной слева от себя значение справа, -= соответственно отнимает, *= умножает, //= берет
             целую часть от деления, а %= – остаток.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->

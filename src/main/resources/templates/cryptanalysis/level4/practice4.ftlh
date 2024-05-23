@@ -104,12 +104,12 @@
         <h2>Выберите подсказку</h2>
 
         <div style="display: flex; flex-direction: row">
-            <button id="openH1Button" class="btn btn-primary mr-2">Возможные значения ключа</button>
-            <button id="openH2Button" class="btn btn-primary mr-2">Переход на следующую итерацию цикла</button>
-            <button id="openH3Button" class="btn btn-primary mr-2">Несколько вариантов</button>
-            <button id="openH4Button" class="btn btn-primary mr-2">Код фрагмента</button>
+            <button id="openH1Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Возможные значения ключа</button>
+            <button id="openH2Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Переход на следующую итерацию цикла</button>
+            <button id="openH3Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Несколько вариантов</button>
+            <button id="openH4Button" class="btn btn-primary mr-2" style="background-color: #8247be; border: #8247be;">Код фрагмента</button>
 
-            <button id="closeMenuButton" class="btn btn-danger">Закрыть</button>
+            <button id="closeMenuButton" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
         </div>
     </div>
 
@@ -120,7 +120,7 @@
             Возможных значений ключа, разбивающегося на ключи a и b, принимающих значения от 0 до количества символов в
             алфавите, соответственно равно количеству символов в алфавите в квадрате.
         </p>
-        <button id="closeH1Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH1Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -129,7 +129,7 @@
         <p>
             Досрочно перейти с одного прохода цикла на следующий позволяет команда continue.
         </p>
-        <button id="closeH2Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH2Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -139,7 +139,7 @@
             При проверке функцией распознавания английского языка программа может вывести ошибочный результат – не стоит
             от него отказываться, но предусмотрите возможность продолжить вычисления и перебор до полного соответствия.
         </p>
-        <button id="closeH3Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH3Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <!-- Окно -->
@@ -168,7 +168,7 @@ def hackAffine(message):
         else:
             plaintext += symbol
     return plaintext</code></pre>
-        <button id="closeH4Button" class="btn btn-danger">Закрыть</button>
+        <button id="closeH4Button" class="btn btn-danger" style="background-color: #92256E; border: #92256E;">Закрыть</button>
     </div>
 
     <script>
