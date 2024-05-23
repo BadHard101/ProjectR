@@ -67,7 +67,7 @@
          class="row">
 
         <div class="container">
-            <h1 class="mt-4" style="color: white;float:center; font-size: 36; margin-top: 87px;">КриптоЛис</h1>
+            <h1 class="mt-4" style="color: white; float:center; font-size: 36; margin-top: 87%;">КриптоЛис</h1>
 
             <div style="width: 400px; margin: 30% auto auto; background: #f9f9f9; padding: 30px; border-radius: 20px; text-align: center;">
 
