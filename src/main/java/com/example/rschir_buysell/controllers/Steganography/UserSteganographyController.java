@@ -68,8 +68,7 @@ public class UserSteganographyController {
     @PostMapping("/checkStegano_Level3")
     public String checkStegano_Level3(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        boolean[] result = userSteganographyService.checkStegano_Level3(answers, user);
-        model.addAttribute("result", result);
+        model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
         return "steganography/level3";
     }
 

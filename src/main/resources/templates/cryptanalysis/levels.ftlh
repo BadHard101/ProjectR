@@ -76,17 +76,17 @@
 
                 <div style="margin: 1rem; grid-row: 1; grid-column: 3; max-width: 150px;">
                     <img src="https://i.ibb.co/yyBTTR1/2.png"
-                         alt="Картинка" style="width: 100px; float: center;">
+                         alt="Картинка" style="width: 150px; float: center;">
                 </div>
 
                 <#if user.cryptoProgress gt 14><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
                     <img src="https://i.ibb.co/yyBTTR1/2.png"
-                         alt="Картинка" style="width: 100px; float: center;">
+                         alt="Картинка" style="width: 150px; float: center;">
                 </div></#if>
 
                 <#if user.cryptoProgress gt 25><div style="margin: 1rem; grid-row: 4; grid-column: 1; min-width: 150px;">
                     <img src="https://i.ibb.co/yyBTTR1/2.png"
-                         alt="Картинка" style="width: 100px; float: center;">
+                         alt="Картинка" style="width: 150px; float: center;">
                 </div></#if>
 
 
