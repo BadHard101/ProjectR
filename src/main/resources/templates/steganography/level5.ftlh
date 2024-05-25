@@ -166,7 +166,8 @@ embed_text_in_video(input_video_path, output_video_path, hidden_message)
                 <img src="https://media1.tenor.com/m/0pmPIX08hQUAAAAC/goku-dragon-ball-level-up-anime-gif.gif"
                      alt="Ваше изображение">
                 <hr>
-                <a href="/openSteganoLevels" class="btn btn-primary">Перейти к списку
+                <a href="/openSteganoLevels" class="btn btn-primary"
+                   style="background-color: #9966cc; border: #9966cc;">Перейти к списку
                     уровней</a>
             </div>
         </#if>
