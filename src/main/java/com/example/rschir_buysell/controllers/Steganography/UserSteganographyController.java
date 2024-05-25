@@ -45,6 +45,9 @@ public class UserSteganographyController {
     @GetMapping("/openStegano_Level2")
     public String open_Level2(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getSteganoProgress() < 1) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "steganography/level2";
     }
 
@@ -62,6 +65,9 @@ public class UserSteganographyController {
     @GetMapping("/openStegano_Level3")
     public String open_Level3(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getSteganoProgress() < 2) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "steganography/level3";
     }
 
@@ -69,6 +75,7 @@ public class UserSteganographyController {
     public String checkStegano_Level3(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
+        userSteganographyService.checkStegano_Level3(answers, user);
         return "steganography/level3";
     }
 
@@ -78,6 +85,9 @@ public class UserSteganographyController {
     @GetMapping("/openStegano_Level4")
     public String open_Level4(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getSteganoProgress() < 3) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "steganography/level4";
     }
 
@@ -85,6 +95,7 @@ public class UserSteganographyController {
     public String checkStegano_Level4(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         model.addAttribute("openPracLable", "Отлично, перейдем к следующему этапу!");
+        userSteganographyService.checkStegano_Level4(answers, user);
         return "steganography/level4";
     }
 
@@ -94,14 +105,17 @@ public class UserSteganographyController {
     @GetMapping("/openStegano_Level5")
     public String open_Level5(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
+        if (user.getSteganoProgress() < 4) {
+            return "redirect:/openCryptanalysisLevels";
+        }
         return "steganography/level5";
     }
 
     @PostMapping("/checkStegano_Level5")
     public String checkStegano_Level5(@ModelAttribute Answers answers, Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
-        boolean[] result = userSteganographyService.checkStegano_Level5(answers, user);
-        model.addAttribute("result", result);
+        model.addAttribute("openPracLable", "Поздравляем, вы прошли все уровни!");
+        userSteganographyService.checkStegano_Level5(answers, user);
         return "steganography/level5";
     }
 

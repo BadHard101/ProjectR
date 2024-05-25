@@ -3,7 +3,7 @@
 <style>
     /* Стили для всплывающего окна */
     .popup {
-        display: none;
+        display: block;
         position: fixed;
         top: 50vh; /* 50% of the viewport height */
         left: 50vw; /* 50% of the viewport width */

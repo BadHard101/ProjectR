@@ -3,7 +3,7 @@
 <style>
     /* Стили для всплывающего окна */
     .popup {
-        display: none;
+        display: block;
         position: fixed;
         top: 50vh; /* 50% of the viewport height */
         left: 50vw; /* 50% of the viewport width */
@@ -46,33 +46,37 @@
         border-radius: 1.5vw; /* 1.5% of the viewport width */
         filter: blur(1vw); /* 1% of the viewport width */
     }
+
 </style>
 <div class="overlay">
-<div class="mt-4">
-    <h3>ЭТАП 5. ЗНАКОМСТВО СО КОДОМ</h3>
-    <p>
-        Ниже представлен пример кода на Python, который использует библиотеку opencv для работы
-        с видео и numpy для манипуляций с массивами. Этот код внедряет скрытую информацию в видеофайл выбранным методом.
-    </p>
-    <p>
-        Пояснения:
-    </p>
-    <p>
-        Функция text_to_bits: Преобразует текст в список битов.
-    </p>
-    <p>
-        Функция bits_to_text: Преобразует список битов обратно в текст (не используется в этом примере, но полезна для извлечения информации).
-    </p>
-    <p>
-        Функция embed_text_in_frame: Встраивает биты текста в кадр изображения.
-    </p>
-    <p>
-        Функция embed_text_in_video: Читает видео, встраивает скрытое сообщение в кадры и записывает новое видео.
-    </p>
-    <p>
-        Этот код является базовым примером и может быть далее улучшен для обработки больших объемов данных, обеспечения большей безопасности и других особенностей.
-    </p>
-    <pre><code>
+    <div class="mt-4">
+        <h3>ЭТАП 5. ЗНАКОМСТВО СО КОДОМ</h3>
+        <p>
+            Ниже представлен пример кода на Python, который использует библиотеку opencv для работы
+            с видео и numpy для манипуляций с массивами. Этот код внедряет скрытую информацию в видеофайл выбранным
+            методом.
+        </p>
+        <p>
+            Пояснения:
+        </p>
+        <p>
+            Функция text_to_bits: Преобразует текст в список битов.
+        </p>
+        <p>
+            Функция bits_to_text: Преобразует список битов обратно в текст (не используется в этом примере, но полезна
+            для извлечения информации).
+        </p>
+        <p>
+            Функция embed_text_in_frame: Встраивает биты текста в кадр изображения.
+        </p>
+        <p>
+            Функция embed_text_in_video: Читает видео, встраивает скрытое сообщение в кадры и записывает новое видео.
+        </p>
+        <p>
+            Этот код является базовым примером и может быть далее улучшен для обработки больших объемов данных,
+            обеспечения большей безопасности и других особенностей.
+        </p>
+        <pre><code class="code">
 import cv2
 import numpy as np
 
@@ -141,17 +145,31 @@ output_video_path = 'output_video_with_hidden_message.avi'
 hidden_message = 'This is a secret message.'
 
 embed_text_in_video(input_video_path, output_video_path, hidden_message)
-
         </code></pre>
-    <#if openPracLable??>
-        <h2 style="color: #4B0082">${openPracLable}</h2>
-    </#if>
-    <form action="/openSteganoLevels" method="get" class="mt-4 mb-4">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я прочитал!</button>
-    </form>
-    <#--    <button id="openMenuButton" class="btn btn-primary">Подсказка</button>-->
 
+        <#if openPracLable??>
+            <h2 style="color: #4B0082">${openPracLable}</h2>
+        </#if>
+        <form action="/checkStegano_Level5" method="post" class="mt-4 mb-4">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я прочитал!</button>
+        </form>
+
+        <#if errorMessage??>
+            <h2 style="color: red">${errorMessage}</h2>
+        </#if>
+
+        <#if openPracLable??>
+            <div class="popup" id="popup">
+                <h1>Поздравляем!</h1>
+                <h3>Вы прошли все уровени!</h3>
+                <img src="https://media1.tenor.com/m/0pmPIX08hQUAAAAC/goku-dragon-ball-level-up-anime-gif.gif"
+                     alt="Ваше изображение">
+                <hr>
+                <a href="/openSteganoLevels" class="btn btn-primary">Перейти к списку
+                    уровней</a>
+            </div>
+        </#if>
     </div>
 </div>
 

@@ -3,7 +3,7 @@
 <style>
     /* Стили для всплывающего окна */
     .popup {
-        display: none;
+        display: block;
         position: fixed;
         top: 50vh; /* 50% of the viewport height */
         left: 50vw; /* 50% of the viewport width */
@@ -200,7 +200,7 @@
         <#if openPracLable??>
             <h2 style="color: #4B0082">${openPracLable}</h2>
         </#if>
-        <form action="/openSteganoLevels" method="get" class="mt-4 mb-4">
+        <form action="/checkStegano_Level3" method="post" class="mt-4 mb-4">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit" class="btn btn-primary" style="background-color: #4B0082; border: #4B0082;">Я прочитал!</button>
         </form>
@@ -210,18 +210,16 @@
             <h2 style="color: red">${errorMessage}</h2>
         </#if>
 
-        <#if result??>
-            <#if (user.getSteganoProgress() == 3)>
-                <div class="popup" id="popup">
-                    <h1>Поздравляем!</h1>
-                    <h3>Вы прошли третий уровень!</h3>
-                    <img src="https://media1.tenor.com/m/0pmPIX08hQUAAAAC/goku-dragon-ball-level-up-anime-gif.gif"
-                         alt="Ваше изображение">
-                    <hr>
-                    <a href="/openSteganoLevels" class="btn btn-primary">Перейти к списку
-                        уровней</a>
-                </div>
-            </#if>
+        <#if openPracLable??>
+            <div class="popup" id="popup">
+                <h1>Поздравляем!</h1>
+                <h3>Вы прошли третий уровень!</h3>
+                <img src="https://media1.tenor.com/m/0pmPIX08hQUAAAAC/goku-dragon-ball-level-up-anime-gif.gif"
+                     alt="Ваше изображение">
+                <hr>
+                <a href="/openSteganoLevels" class="btn btn-primary">Перейти к списку
+                    уровней</a>
+            </div>
         </#if>
     </div>
 </div>
